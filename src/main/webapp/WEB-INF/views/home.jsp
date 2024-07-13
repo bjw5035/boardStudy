@@ -4,10 +4,7 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>${message}</h1>
-
-    <div>
-        <p><a href="login">Login</a></p>
-    </div>
+    <p><a href="login">Login</a></p>
+    <p><a href="login">LogOut</a></p>
 </body>
 </html>
