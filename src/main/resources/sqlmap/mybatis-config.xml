@@ -1,0 +1,15 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE configuration-->
+<!--  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"-->
+<!--  "http://mybatis.org/dtd/mybatis-3-config.dtd">-->
+<!--<configuration>-->
+<!--  <typeAliases>-->
+<!--    <typeAlias type="com.myweb.board.vo.LogInVO_bak" alias="LoginVO"/>-->
+<!--    &lt;!&ndash;		<typeAlias alias="MemberVO" type="com.myweb.board.backFile.MemberVO" />&ndash;&gt;-->
+<!--    <typeAlias alias="MyModifyVO" type="com.myweb.board.vo.MyModifyVO_bak" />-->
+<!--  </typeAliases>-->
+<!--  <mappers>-->
+<!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
+<!--  </mappers>-->
+
+<!--</configuration>-->
