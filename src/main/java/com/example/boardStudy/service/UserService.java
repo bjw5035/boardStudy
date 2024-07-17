@@ -1,6 +1,9 @@
 package com.example.boardStudy.service;
 
-public interface userService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface UserService {
 
     public String login(String userId) throws Exception;
 
