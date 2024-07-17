@@ -1,0 +1,6 @@
+<!-- DB Properties.xml -->
+<util:properties id="config" location="classpath:/config/config.xml" xmlns:util=""/>
+
+<property name="url" value="jdbc:mysql://localhost:3306/webdb?serverTimezone=UTC"></property>
+<property name="username" value="user1"></property>
+<property name="password" value="rootpass1!!"></property>
