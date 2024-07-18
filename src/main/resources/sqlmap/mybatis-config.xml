@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-    <typeAlias type="com.example.boardStudy.vo.UserVO" alias="LoginVO"/>
+    <typeAlias type="com.example.boardStudy.vo.UserVO" alias="UserVO"/>
     <!--		<typeAlias alias="MemberVO" type="com.myweb.board.backFile.MemberVO" />-->
 <!--    <typeAlias alias="MyModifyVO" type="com.example.boardStudy.vo.UserVO" />-->
   </typeAliases>

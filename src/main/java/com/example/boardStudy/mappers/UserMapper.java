@@ -1,10 +1,11 @@
 package com.example.boardStudy.mappers;
 
+import com.example.boardStudy.vo.UserVO;
 import org.springframework.stereotype.Repository;
 
-@Repository(value = "web")
+@Repository
 public interface UserMapper {
 
-    String memberLogin(String userId);
+    String memberLogin(UserVO userVO) throws Exception;
 
 }

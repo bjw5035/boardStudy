@@ -1,10 +1,9 @@
 package com.example.boardStudy.service;
 
-import org.springframework.stereotype.Service;
+import com.example.boardStudy.vo.UserVO;
 
-@Service
 public interface UserService {
 
-    public String login(String userId) throws Exception;
+    public String login(UserVO userVO) throws Exception;
 
 }
