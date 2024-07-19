@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Slf4j
-@Controller
 @RequestMapping("/")
+@Controller
 public class AdminController {
 
-        @Autowired
-    UserService userService;
+    final UserService userService;
+
+    public AdminController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping("/login")
     public String loginPage() {

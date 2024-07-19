@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    UserVO userVO;
+    private final UserVO userVO;
 
-    @Autowired
-    UserMapper userMapper;
-    
+    private final UserMapper userMapper;
+
+    public UserServiceImpl(UserVO userVO, UserMapper userMapper) {
+        this.userVO = userVO;
+        this.userMapper = userMapper;
+    }
 
     public String login(UserVO userVO) throws Exception{
 
