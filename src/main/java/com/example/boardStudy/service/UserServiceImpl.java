@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserVO userVO;
 
+    private final UserVO userVO;
     private final UserMapper userMapper;
 
     public UserServiceImpl(UserVO userVO, UserMapper userMapper) {

@@ -1,8 +1,13 @@
 package com.example.boardStudy.vo;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
 /*
 * Annotation을 사용하지 않고 직접적으로 사용해 보기위함
 * */
+@Component
 public class UserVO {
 
     public String userId;
