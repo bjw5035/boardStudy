@@ -1,9 +1,10 @@
 package com.example.boardStudy.service;
 
 import com.example.boardStudy.vo.UserVO;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public interface UserService {
 
-    public String login(UserVO userVO) throws Exception;
+    public String login(@RequestParam UserVO userVO) throws Exception;
 
 }

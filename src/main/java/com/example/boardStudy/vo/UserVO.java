@@ -39,12 +39,12 @@ public class UserVO {
         this.userPassword = userPassword;
     }
 
-    @Override
-    public String toString() {
-        return "UserVO{" +
-            "userId='" + userId + '\'' +
-            ", userName='" + userName + '\'' +
-            ", userPassword='" + userPassword + '\'' +
-            '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "UserVO{" +
+//            "userId='" + userId + '\'' +
+//            ", userName='" + userName + '\'' +
+//            ", userPassword='" + userPassword + '\'' +
+//            '}';
+//    }
 }
