@@ -28,7 +28,7 @@
     <!-- 마이바티스 SqlSession 등록하기 (xml 방식으로 bean 등록) -->
     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- mybatis-config.xml 설정 불러오기 -->
-        <property name="configLocation" value="classpath:/sqlmap/mybatis-config.xml" />
+        <property name="configLocation" value="classpath*:/sqlmap/mybatis-config.xml" />
         <property name="dataSource" ref="dataSource" />
     </bean>
 
