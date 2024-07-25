@@ -15,6 +15,10 @@ public class UserVO {
         this.userPassword = userPassword;
     }
 
+    public UserVO() {
+
+    }
+
     public String getUserId() {
         return userId;
     }

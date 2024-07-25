@@ -74,11 +74,11 @@
 
     <!-- 임시 추가 dhcp -->
     <!-- MyBatis Spring -->
-    <dependency>
-      <groupId>org.mybatis.spring</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>${mybatis-spring.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.mybatis.spring</groupId>-->
+<!--      <artifactId>mybatis-spring</artifactId>-->
+<!--      <version>${mybatis-spring.version}</version>-->
+<!--    </dependency>-->
     <!-- MyBatis -->
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -97,16 +97,16 @@
       <version>2.1.214</version>
       <scope>runtime</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>3.5.14</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
-      <version>3.0.3</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.mybatis</groupId>-->
+<!--      <artifactId>mybatis</artifactId>-->
+<!--      <version>3.5.14</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.mybatis.spring.boot</groupId>-->
+<!--      <artifactId>mybatis-spring-boot-autoconfigure</artifactId>-->
+<!--      <version>3.0.3</version>-->
+<!--    </dependency>-->
 
   </dependencies>
 

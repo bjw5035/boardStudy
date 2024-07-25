@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Mapper
 public interface UserMapper {
 
-    String memberLogin(@RequestParam UserVO userVO) throws Exception;
+//    String memberLogin(@RequestParam UserVO userVO) throws Exception;
 
 }

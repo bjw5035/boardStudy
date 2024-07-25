@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface UserService {
 
-    public String login(@RequestParam UserVO userVO) throws Exception;
+    public String login() throws Exception;
 
 }
