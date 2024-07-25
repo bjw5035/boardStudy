@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.example.boardStudy.mappers.UserMapper">
+<mapper namespace="com.example.boardStudy.dao.admin.UserDao">
 
   <!-- 회원가입 -->
   <!-- insert : 데이터 입력(insert)을 나타내는 태그.
@@ -29,7 +29,7 @@
   <select id="memberLogin" parameterType="hashmap" resultType="String">
 		<![CDATA[
     select *
-    from member
+    from webdb.member
     where 1=1
       AND id = #{userId}
       AND pw = #{userPw}

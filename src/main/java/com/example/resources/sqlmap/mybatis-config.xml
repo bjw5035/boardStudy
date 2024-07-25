@@ -8,8 +8,8 @@
   </typeAliases>
   <mappers>
 <!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
-    <mapper resource="/mappers/UserMapper" />
-    <mapper resource="/resourcesSQL/sqlmap/mapper/UserMapper-sql.xml" />
+    <mapper resource="/dao/admin/UserDao.java" />
+    <mapper resource="example/resources/sqlmap/mapper/UserMapper-sql.xml" />
   </mappers>
 
 </configuration>

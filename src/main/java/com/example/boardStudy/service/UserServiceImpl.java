@@ -1,15 +1,18 @@
 package com.example.boardStudy.service;
 
+import com.example.boardStudy.dao.admin.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    public String login() throws Exception {
+    @Autowired
+    UserDao userDao;
 
-        String text = "login";
-        System.out.println(text);
-//        return login("test");
-        return text;
+    public void login(String userId, String userPw) throws Exception {
+
+        userDao.memberLogin(userId, userPw);
+
     }
 }

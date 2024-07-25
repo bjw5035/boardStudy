@@ -14,23 +14,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
 
     @Autowired
-    private final UserService userService;
+    UserService userService;
 
-    @Autowired
-    public AdminController(UserService userService) {
-        this.userService = userService;
-    }
+//    @Autowired
+//    public AdminController(UserService userService) {
+//        this.userService = userService;
+//    }
 
-    //    @GetMapping("/login")
+//    @GetMapping("/login")
 //    public String loginPage() {
 //        return "login";
 //    }
+
+
 //    @GetMapping("/login")
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() throws Exception {
-
-//        userService.login();
-
-        return userService.login();
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(@RequestParam String userId, String userPw) throws Exception {
+        userService.login(userId, userPw);
     }
 }

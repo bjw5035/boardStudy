@@ -2,6 +2,6 @@ package com.example.boardStudy.service;
 
 public interface UserService {
 
-    public String login() throws Exception;
+    void login(String userId, String userPw) throws Exception;
 
 }
