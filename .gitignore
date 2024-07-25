@@ -1,7 +1,7 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
-!**/src/main/**/spring/
+!**/src/main/webapp/WEB-INF/spring/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
