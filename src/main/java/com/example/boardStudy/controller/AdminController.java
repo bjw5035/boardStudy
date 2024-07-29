@@ -21,13 +21,11 @@ public class AdminController {
 //        this.userService = userService;
 //    }
 
-//    @GetMapping("/login")
-//    public String loginPage() {
-//        return "login";
-//    }
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() {
+        return "login";
+    }
 
-
-//    @GetMapping("/login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public void login(@RequestParam String userId, String userPw) throws Exception {
         userService.login(userId, userPw);
