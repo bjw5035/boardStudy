@@ -11,11 +11,11 @@
         <form method="POST">
             <p>
                 <label for="username">아이디 : </label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="userId" name="username">
             </p>
             <p>
                 <label for="password">패스워드 : </label>
-                <input type="text" id="password" name="password">
+                <input type="text" id="userPw" name="password">
             </p>
             <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>
             <button class="ui-button" id="logOut" name="btnLogOut">로그아웃</button>

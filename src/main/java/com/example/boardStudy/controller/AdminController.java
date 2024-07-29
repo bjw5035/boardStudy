@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
 //    @Autowired
 //    public AdminController(UserService userService) {
