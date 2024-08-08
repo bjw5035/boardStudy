@@ -1,4 +1,8 @@
 // login
-function login() {
-  alert("test");
+function login(userId) {
+
+  if (userId == null) {
+    alert("test");
+  }
+  return;
 }

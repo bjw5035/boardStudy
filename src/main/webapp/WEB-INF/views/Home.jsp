@@ -4,7 +4,7 @@
     <title>Home</title>
 </head>
 <body>
-    <p><a href="login">Login</a></p>
-    <p><a href="login">LogOut</a></p>
+    <p><a href="/Login">Login</a></p>
+<%--    <p><a href="login">LogOut</a></p>--%>
 </body>
 </html>

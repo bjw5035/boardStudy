@@ -6,7 +6,7 @@
 <body>
 
     <h2>Login</h2>
-<form action="login" method="POST">
+<form action="Login" method="POST">
     <div>
         <form method="POST">
             <p>
@@ -17,7 +17,7 @@
                 <label for="userPw">패스워드 : </label>
                 <input type="text" id="userPw" name="password">
             </p>
-            <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>
+            <button class="ui-button" id="login" name="btnLogin" onclick="login(userId)">로그인</button>
             <button class="ui-button" id="logOut" name="btnLogOut">로그아웃</button>
         </form>
     </div>
