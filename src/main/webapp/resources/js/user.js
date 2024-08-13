@@ -1,8 +1,16 @@
 // login
-function login(userId) {
+function login() {
+  var userId = document.getElementById("userId").value;
+  var userPw = document.getElementById("userPw").value;
 
-  if (userId == null) {
-    alert("test");
+  console.log(userId);
+  console.log(userPw);
+
+  if (userId == null && userPw == null) {
+    alert("userId is null");
+    alert("userPw is null");
+  } else {
+    document.getElementById("Login").submit();
   }
   return;
 }
