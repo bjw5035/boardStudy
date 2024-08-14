@@ -1,6 +1,7 @@
 package com.example.boardStudy.controller;
 
 import com.example.boardStudy.service.UserService;
+import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,22 @@ public class AdminController {
 //        this.userService = userService;
 //    }
 
-    @RequestMapping(value = "/Login", method = RequestMethod.GET)
+    @RequestMapping(value = "/auth/Login", method = RequestMethod.GET)
     public String loginPage() {
         logger.info("Login Page 이동입니다.");
         return "Login";
     }
 
-    @RequestMapping(value = "/Login", method = RequestMethod.POST)
-    public void idLogin(@RequestParam String userId, String userPw) throws Exception {
+    @RequestMapping(value = "/auth/Login", method = RequestMethod.POST)
+    public String login(@RequestParam("userId") String userId,@RequestParam("userPw") String userPw, HttpSession session) throws Exception {
         logger.info("login");
         logger.info("Data userId: " + userId + "userPw : " + userPw);
-        userService.login(userId, userPw);
+        if (userService.login(userId, userPw)) {
+            session.setAttribute("userId", userId);
+            return "redirect:/Board";
+        } else {
+            return "redirect:/error/LoginError";
+        }
     }
 
     @RequestMapping(value = "/error/LoginError", method = RequestMethod.GET)
