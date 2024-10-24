@@ -5,9 +5,14 @@ package com.example.boardStudy.vo;
 * */
 public class UserVO {
 
-    public String userId;
-    public String userName;
-    public String userPassword;
+    private String userId;
+    private String userName;
+    private String userPassword;
+
+    public UserVO(String userId, String userPassword) {
+        this.userId = userId;
+        this.userPassword = userPassword;
+    }
 
     public UserVO(String userId, String userName, String userPassword) {
         this.userId = userId;

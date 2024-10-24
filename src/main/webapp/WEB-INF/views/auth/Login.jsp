@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Login</h2>
-<form action="Login" method="POST">
+<form action="" method="POST">
     <div>
         <p>
             <label for="userId">아이디 : </label>
@@ -15,7 +15,8 @@
             <label for="userPw">패스워드 : </label>
             <input type="text" id="userPw" name="password">
         </p>
-        <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>
+<%--        <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>--%>
+        <button class="ui-button" id="login" name="btnLogin" type="submit">로그인</button>
         <button class="ui-button" id="logOut" name="btnLogOut">로그아웃</button>
     </div>
 </form>

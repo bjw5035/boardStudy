@@ -17,7 +17,8 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>6.1.13</version>
+<!--      <version>6.1.13</version>-->
+      <version>5.3.18</version>
 <!--      <version>${spring.version}</version>-->
     </dependency>
     <dependency>
@@ -80,24 +81,51 @@
 <!--      <version>${mybatis-spring.version}</version>-->
 <!--    </dependency>-->
     <!-- MyBatis -->
+
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>3.5.10</version>
     </dependency>
+
     <!-- DataSource (HikariCP, H2 Database for example) -->
     <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
       <version>5.0.1</version>
     </dependency>
+
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>2.2.220</version>
       <scope>runtime</scope>
     </dependency>
-<!--    <dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven/maven-settings -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-settings</artifactId>
+      <version>3.9.5</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven/maven-project -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
+
+
+    <!--    <dependency>-->
 <!--      <groupId>org.mybatis</groupId>-->
 <!--      <artifactId>mybatis</artifactId>-->
 <!--      <version>3.5.14</version>-->
@@ -133,6 +161,19 @@
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-profiler-plugin</artifactId>-->
+<!--        <version>1.8</version>-->
+<!--      </plugin>-->
+
     </plugins>
   </build>
 </project>
