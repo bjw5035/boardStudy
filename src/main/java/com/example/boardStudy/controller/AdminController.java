@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
-//@RequestMapping("/Home")
+@RequestMapping("/auth")
 public class AdminController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -36,28 +36,23 @@ public class AdminController {
     /*
      * 로그인 페이지
      * */
-    @RequestMapping(value = "/auth/Login", method = RequestMethod.GET)
-    public String loginPage() throws Exception{
+    @RequestMapping(value = "/Login", method = RequestMethod.GET)
+    public String loginPage() throws Exception {
         logger.info("Login Page 이동입니다.");
         return "/auth/Login";
     }
 
-    @RequestMapping(value = "/auth/Login", method = RequestMethod.POST)
+    @RequestMapping(value = "/Login", method = RequestMethod.POST)
     public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
 
         if (userService.login(userId, userPw)) {
             session.setAttribute("userId", userId);
-            return "redirect:/Board";
+            return "redirect:/board/Board";
         } else {
             return "redirect:/error/LoginError";
         }
     }
 
-    @RequestMapping(value = "/error/LoginError", method = RequestMethod.GET)
-    public String loginErrorPage() {
-        logger.info("Login Error Page입니다.");
-        return "/LoginError";
-    }
 }

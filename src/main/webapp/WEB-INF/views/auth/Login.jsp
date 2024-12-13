@@ -5,15 +5,15 @@
 </head>
 <body>
     <h2>Login</h2>
-<form action="" method="POST">
+<form action="Login" method="POST">
     <div>
         <p>
             <label for="userId">아이디 : </label>
-            <input type="text" id="userId" name="username">
+            <input type="text" id="userId" name="userId">
         </p>
         <p>
             <label for="userPw">패스워드 : </label>
-            <input type="text" id="userPw" name="password">
+            <input type="text" id="userPw" name="userPw">
         </p>
 <%--        <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>--%>
         <button class="ui-button" id="login" name="btnLogin" type="submit">로그인</button>
@@ -21,6 +21,6 @@
     </div>
 </form>
 
-    <script type="text/javascript" src="/WEB-INF/js/user.js"></script>
+<%--    <script type="text/javascript" src="/WEB-INF/js/user.js"></script>--%>
 </body>
 </html>
