@@ -20,4 +20,9 @@ public class BoardController {
         return "/board/Board";
     }
 
+    @RequestMapping(value = "/Write", method = RequestMethod.GET)
+    public String writeView(Model model) {
+        return "/board/Write";
+    }
+
 }

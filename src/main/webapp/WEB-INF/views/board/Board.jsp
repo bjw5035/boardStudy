@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +9,17 @@
   <h1>Board</h1>
 
   <c:if test="${not empty sessionScope.userId}">
-    <p>ȯ���մϴ�, ${sessionScope.userId}</p>
-    <a href="/auth/Logout">�α׾ƿ�</a>
+    <p>환영합니다, ${sessionScope.userId}</p>
+    <a href="/auth/Logout">로그아웃</a>
   </c:if>
 
   <table border="1">
     <thead>
       <tr>
-        <th>��ȣ</th>
-        <th>����</th>
-        <th>�ۼ���</th>
-        <th>�ۼ���</th>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
       </tr>
     </thead>
     <tbody>
@@ -32,7 +33,7 @@
     </tbody>
   </table>
 <p>
-  <a href="/board/Write">�� �� �ۼ�</a>
+  <a href="/board/Write">새 글 작성</a>
 </p>
 </body>
 </html>
