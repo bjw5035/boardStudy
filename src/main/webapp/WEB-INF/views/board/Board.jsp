@@ -33,7 +33,7 @@
     </tbody>
   </table>
 <p>
-  <a href="/board/Write">새 글 작성</a>
+  <a href="/board/Write">글쓰기</a>
 </p>
 </body>
 </html>
