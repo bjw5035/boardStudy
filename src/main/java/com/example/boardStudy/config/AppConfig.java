@@ -15,12 +15,17 @@ public class AppConfig {
 
     @Bean
     public UserDao userDao() {
+
         return new UserDao() {
+
             @Override
             public String memberLogin(String userId, String userPw) throws Exception {
                 return null;
             }
+
         };
+
     }
+
 }
 

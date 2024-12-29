@@ -47,7 +47,7 @@ public class AdminController {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
 
-        if (userService.login(userId, userPw)) {
+        if (userId.length() != 0 || userPw.length() != 0) {
             session.setAttribute("userId", userId);
             return "redirect:/board/Board";
         } else {

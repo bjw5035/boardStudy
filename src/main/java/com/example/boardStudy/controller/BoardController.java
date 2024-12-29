@@ -30,20 +30,20 @@ public class BoardController {
         return "/board/Write";
     }
 
-//    @GetMapping(value = "/Write")
-//    public String contentWrite(@SessionAttribute(name = "userId", required = false) String userId, Model model) {
-//
-//        if (userId == null) {
-//            return "/auth/Login";
-//        }
-//
-//        List<PostVO> postList = new ArrayList<>();
-//        postList.add(new PostVO(1, "첫 번째 글", "관리자", "2024-12-13"));
-//        postList.add(new PostVO(2, "두 번째 글", "사용자1", "2024-12-12"));
-//
-//        model.addAttribute("postList", postList);
-////        return "Write";
-//        return model.toString();
-//    }
+    @GetMapping(value = "/Write")
+    public String contentWrite(@SessionAttribute(name = "userId", required = false) String userId, Model model) {
+
+        if (userId == null) {
+            return "/auth/Login";
+        }
+
+        List<PostVO> postList = new ArrayList<>();
+        postList.add(new PostVO(1, "첫 번째 글", "관리자", "2024-12-13"));
+        postList.add(new PostVO(2, "두 번째 글", "사용자1", "2024-12-12"));
+
+        model.addAttribute("postList", postList);
+//        return "Write";
+        return model.toString();
+    }
 
 }

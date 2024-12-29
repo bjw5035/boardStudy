@@ -14,17 +14,15 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    public boolean login(String userId, String userPw) throws Exception {
+    public void login(String userId, String userPw) throws Exception {
 
         try {
             if (userId.length() > 0) {
                 userDao.memberLogin(userId, userPw);
                 logger.info("success");
             }
-            return true;
         } catch (Exception e) {
             logger.error("login fail");
-            return false;
         }
 
     }
