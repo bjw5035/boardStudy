@@ -1,5 +1,6 @@
 package com.example.boardStudy.config;
 
+import com.example.boardStudy.dao.admin.BoardDao;
 import com.example.boardStudy.dao.admin.UserDao;
 import com.example.boardStudy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +16,22 @@ public class AppConfig {
 
     @Bean
     public UserDao userDao() {
-
         return new UserDao() {
-
             @Override
             public String memberLogin(String userId, String userPw) throws Exception {
                 return null;
             }
-
         };
+    }
 
+    @Bean
+    public BoardDao boardDao() {
+        return new BoardDao() {
+            @Override
+            public String boardInsert(int id, String title, String content, String author) {
+                return null;
+            }
+        };
     }
 
 }

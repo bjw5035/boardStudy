@@ -36,36 +36,6 @@
     ]]>
 	</select>
 
-  <!-- 게시물 등록	-->
-<!--  <insert id="boardInsert" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">-->
-<!--		<![CDATA[-->
-<!--    INSERT INTO webdb.board-->
-<!--      (TITLE, CONTENTS)-->
-<!--    VALUES-->
-<!--      (#{title},#{contents})-->
-<!--    ]]>-->
-<!--	</insert>-->
-
-  <!-- 게시물 리스트 -->
-<!--  <select id="board_list" resultType="hashmap">-->
-<!--		<![CDATA[-->
-<!--    INSERT INTO webdb.board-->
-<!--    (-->
-<!--      BOARD_NO,-->
-<!--      TITLE,-->
-<!--      CONTENTS,-->
-<!--      CREATE_TIME-->
-<!--    )-->
-<!--    VALUES-->
-<!--      (-->
-<!--        #{board_no},-->
-<!--        #{title},-->
-<!--        #{contents},-->
-<!--        #{create_time}-->
-<!--      )-->
-<!--    ]]>-->
-<!--	</select>-->
-
   <!-- 마이페이지 수정 -->
   <!--<update id="update_myModify">
     <![CDATA[
