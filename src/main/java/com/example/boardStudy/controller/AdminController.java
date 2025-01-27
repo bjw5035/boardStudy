@@ -42,6 +42,15 @@ public class AdminController {
         return "/auth/Login";
     }
 
+    /**
+     * 로그인 기능 로직
+     * @param userId
+     * @param userPw
+     * @param model
+     * @param session
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/Login", method = RequestMethod.POST)
     public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
         logger.info("userId : " + userId);

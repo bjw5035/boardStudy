@@ -19,7 +19,6 @@ public class BoardServiceImpl implements BoardService {
             logger.info("Post Success");
         }catch (Exception e){
             logger.error(e.getMessage() + "Post Error");
-            e.printStackTrace();
         }
 
         return "Post Success";
