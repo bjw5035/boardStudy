@@ -38,8 +38,8 @@ public class BoardController {
         }
 
         List<PostVO> postList = new ArrayList<>();
-        postList.add(new PostVO(1, "Ã¹ ¹øÂ° ±Û", "°ü¸®ÀÚ", "2024-12-13"));
-        postList.add(new PostVO(2, "µÎ ¹øÂ° ±Û", "»ç¿ëÀÚ1", "2024-12-12"));
+        postList.add(new PostVO(1, "í…ŒìŠ¤íŠ¸1", "ê¸€ì“°ê¸° í…ŒìŠ¤íŠ¸1", "2024-12-13"));
+        postList.add(new PostVO(2, "í…ŒìŠ¤íŠ¸2", "ê¸€ì“°ê¸° í…ŒìŠ¤íŠ¸2", "2024-12-12"));
 
         model.addAttribute("postList", postList);
 //        return "Write";

@@ -7,8 +7,8 @@
     <typeAlias type="com.example.boardStudy.vo.UserVO" alias="UserVO"/>
     <typeAlias type="com.example.boardStudy.vo.UserVO" alias="PostVO"/>
 
-    <typeAlias type="com.example.boardStudy.dao.admin.UserDao" alias="UserDao" />
-    <typeAlias type="com.example.boardStudy.dao.admin.BoardDao" alias="BoardDao" />
+    <typeAlias type="com.example.boardStudy.repository.admin.UserRepository" alias="UserDao" />
+    <typeAlias type="com.example.boardStudy.repository.admin.BoardRepository" alias="BoardDao" />
   </typeAliases>
   <mappers>
 <!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
