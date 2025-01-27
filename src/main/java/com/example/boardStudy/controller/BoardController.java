@@ -1,5 +1,6 @@
 package com.example.boardStudy.controller;
 
+import com.example.boardStudy.service.BoardService;
 import com.example.boardStudy.vo.PostVO;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,11 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 public class BoardController {
 
     private Logger logger = LoggerFactory.getLogger(BoardController.class);
+    private final BoardService boardService;
+
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     /**
      * 게시판 홈 화면
