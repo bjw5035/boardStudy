@@ -36,40 +36,6 @@ public class BoardController {
         return "/board/Board";
     }
 
-    /**
-     * 글쓰기 화면
-     * @param model
-     * @return
-     */
-    // todo
-    //  글쓰기 화면 로직 이동
-    @RequestMapping(value = "/Write", method = RequestMethod.POST)
-    public String writeView(Model model) {
-        return "/board/Write";
-    }
 
-    /**
-     * 글쓰기 기능 로직
-     * @param userId
-     * @param model
-     * @return
-     */
-    @PostMapping(value = "/Write")
-    public String contentWrite(@SessionAttribute(name = "userId", required = false) String userId, Model model) {
-
-        if (userId == null) {
-            return "/auth/Login";
-        }
-
-        // TODO
-        //  데이터 저장 확인
-        List<PostVO> postList = new ArrayList<>();
-        postList.add(new PostVO(1, "테스트1", "글쓰기 테스트1", "2024-12-13"));
-        postList.add(new PostVO(2, "테스트2", "글쓰기 테스트2", "2024-12-12"));
-
-        model.addAttribute("postList", postList);
-//        return "Write";
-        return model.toString();
-    }
 
 }
