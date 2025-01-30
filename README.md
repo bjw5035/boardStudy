@@ -1,4 +1,9 @@
 # boardStudy
 
-Setting
+- Setting
   - java : jdk-22
+
+---------------------------------------------
+
+
+
