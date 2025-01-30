@@ -4,22 +4,18 @@ import com.example.boardStudy.service.BoardService;
 import com.example.boardStudy.vo.PostVO;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller(value = "/contentWrite")
+@RequiredArgsConstructor
 public class ContentWriteController {
 
-    private final BoardService boardService;
-
-    public ContentWriteController(BoardService boardService) {
-        this.boardService = boardService;
-    }
+    private BoardService boardService;
 
     /**
      * 글쓰기 화면

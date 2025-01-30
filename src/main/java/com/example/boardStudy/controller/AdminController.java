@@ -8,38 +8,27 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
+@Controller(value = "/auth")
 @RequiredArgsConstructor
-@RequestMapping("/auth")
 public class AdminController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
     private UserService userService;
-
-//    @Autowired
-//    public AdminController(UserService userService) {
-//        this.userService = userService;
-//    }
-
-    /* 홈 화면 페이지*/
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model) {
-        return "Home";
-    }
 
     /*
      * 로그인 페이지
      * */
-    @RequestMapping(value = "/Login", method = RequestMethod.GET)
+    @GetMapping(value = "/Login")
     public String loginPage() throws Exception {
         logger.info("Login Page 이동입니다.");
-        return "/auth/Login";
+        return "Login";
     }
 
     /**
@@ -51,7 +40,7 @@ public class AdminController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/Login", method = RequestMethod.POST)
+    @PostMapping(value = "/Login")
     public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
