@@ -13,22 +13,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller(value = "/auth")
+@Controller
 @RequiredArgsConstructor
 public class AdminController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private UserService userService;
+    @Autowired private UserService userService;
 
     /*
      * 로그인 페이지
      * */
-    @GetMapping(value = "/Login")
+    @GetMapping(value = "/auth/Login")
     public String loginPage() throws Exception {
         logger.info("Login Page 이동입니다.");
-        return "Login";
+        return "/auth/Login";
     }
 
     /**
@@ -40,7 +41,7 @@ public class AdminController {
      * @return
      * @throws Exception
      */
-    @PostMapping(value = "/Login")
+    @PostMapping(value = "/auth/Login")
     public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
