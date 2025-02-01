@@ -1,6 +1,7 @@
 package com.example.boardStudy.controller;
 
 import com.example.boardStudy.service.UserService;
+import com.example.boardStudy.vo.UserVO;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -42,16 +43,17 @@ public class AdminController {
      * @throws Exception
      */
     @PostMapping(value = "/auth/Login")
-    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
+    public void login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
 
-        if (userId.length() != 0 || userPw.length() != 0) {
-            session.setAttribute("userId", userId);
-            return "redirect:/board/Board";
-        } else {
-            return "redirect:/error/LoginError";
-        }
+        UserVO userVO = new UserVO();
+        userVO.setUserId(userId);
+        userVO.setUserPw(userPw);
+        logger.info("userVO : " + userVO);
+
+        userService.login(userVO);
+
     }
 
 }

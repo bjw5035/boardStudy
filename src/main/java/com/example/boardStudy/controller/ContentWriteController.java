@@ -22,8 +22,6 @@ public class ContentWriteController {
      * @param model
      * @return
      */
-    // todo
-    //  글쓰기 화면 로직 이동
     @GetMapping(value = "/Write")
     public String writeView(Model model) {
         return "/contentWrite/Write";
@@ -42,8 +40,6 @@ public class ContentWriteController {
             return "/auth/Login";
         }
 
-        // TODO
-        //  데이터 저장 확인
         List<PostVO> postList = new ArrayList<>();
         postList.add(new PostVO(1, "테스트1", "글쓰기 테스트1", "2024-12-13"));
         postList.add(new PostVO(2, "테스트2", "글쓰기 테스트2", "2024-12-12"));

@@ -1,5 +1,6 @@
 package com.example.boardStudy.repository.admin;
 
+import com.example.boardStudy.vo.UserVO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -8,6 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository {
 
-    void memberLogin(String userId, String userPw) throws Exception;
-
+    void memberLogin(UserVO userVO);
 }

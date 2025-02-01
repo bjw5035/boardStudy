@@ -5,15 +5,16 @@
 <configuration>
   <typeAliases>
     <typeAlias type="com.example.boardStudy.vo.UserVO" alias="UserVO"/>
-    <typeAlias type="com.example.boardStudy.vo.UserVO" alias="PostVO"/>
+    <typeAlias type="com.example.boardStudy.vo.PostVO" alias="PostVO"/>
 
     <typeAlias type="com.example.boardStudy.repository.admin.UserRepository" alias="UserDao" />
     <typeAlias type="com.example.boardStudy.repository.admin.BoardRepository" alias="BoardDao" />
   </typeAliases>
   <mappers>
 <!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
-    <mapper resource="/dao/admin/UserDao.java" />
-    <mapper resource="/dao/admin/BoardDao.java" />
+<!--    <mapper resource="/dao/admin/UserDao.java" />-->
+    <mapper resource="/repository/admin/UserRepository.java" />
+<!--    <mapper resource="/dao/admin/BoardDao.java" />-->
     <mapper resource="/sqlmap/mapper/UserMapper-sql.xml" />
     <mapper resource="/sqlmap/mapper/BoardMapper-sql.xml" />
   </mappers>

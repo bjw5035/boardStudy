@@ -6,19 +6,18 @@ package com.example.boardStudy.vo;
 public class UserVO {
 
     private String userId;
-    private String userName;
-    private String userPassword;
+//    private String userName;
+    private String userPw;
 
-    public UserVO(String userId, String userPassword) {
+    public UserVO(String userId, String userPw) {
         this.userId = userId;
-        this.userPassword = userPassword;
+        this.userPw = userPw;
     }
 
-    public UserVO(String userId, String userName, String userPassword) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userPassword = userPassword;
-    }
+//    public UserVO(UserVO userVO) {
+//        this.userId = userVO.getUserId();
+//        this.userPw = userVO.getUserPw();
+//    }
 
     public UserVO() {
 
@@ -32,28 +31,19 @@ public class UserVO {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserPw() {
+        return userPw;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserPw(String userPw) {
+        this.userPw = userPw;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    @Override
+    public String toString() {
+        return "UserVO{" +
+            "userId='" + userId + '\'' +
+            ", userPw='" + userPw + '\'' +
+            '}';
     }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-//    @Override
-//    public String toString() {
-//        return "UserVO{" +
-//            "userId='" + userId + '\'' +
-//            ", userName='" + userName + '\'' +
-//            ", userPassword='" + userPassword + '\'' +
-//            '}';
-//    }
 }

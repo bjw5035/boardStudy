@@ -2,6 +2,8 @@ package com.example.boardStudy.config;
 
 import com.example.boardStudy.repository.admin.BoardRepository;
 import com.example.boardStudy.repository.admin.UserRepository;
+import com.example.boardStudy.service.UserService;
+import com.example.boardStudy.vo.UserVO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +17,16 @@ public class AppConfig {
     public UserRepository userDao() {
         return new UserRepository() {
             @Override
-            public void memberLogin(String userId, String userPw) throws Exception {
+            public void memberLogin(UserVO userVO) {}
+        };
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserService() {
+            @Override
+            public void login(UserVO userVO) throws Exception {
+
             }
         };
     }
@@ -23,9 +34,9 @@ public class AppConfig {
     @Bean
     public BoardRepository boardDao() {
         return new BoardRepository() {
-            @Override
-            public void boardInsert(int id, String title, String content, String author) {
-            }
+//            @Override
+//            public void boardInsert(int id, String title, String content, String author) {
+//            }
         };
     }
 

@@ -14,12 +14,12 @@ public class BoardServiceImpl implements BoardService {
 
     public String content(int id, String title, String content, String author) {
 
-        try{
-            boardRepository.boardInsert(id, title, content, author);
-            logger.info("Post Success");
-        }catch (Exception e){
-            logger.error(e.getMessage() + "Post Error");
-        }
+//        try{
+//            boardRepository.boardInsert(id, title, content, author);
+//            logger.info("Post Success");
+//        }catch (Exception e){
+//            logger.error(e.getMessage() + "Post Error");
+//        }
 
         return "Post Success";
     };

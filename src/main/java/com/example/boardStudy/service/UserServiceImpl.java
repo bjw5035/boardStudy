@@ -1,6 +1,7 @@
 package com.example.boardStudy.service;
 
 import com.example.boardStudy.repository.admin.UserRepository;
+import com.example.boardStudy.vo.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +12,14 @@ public class UserServiceImpl implements UserService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository; // DAO
 
-    public void login(String userId, String userPw) throws Exception {
+    public UserServiceImpl(UserRepository userRepository, UserService userService) {
+        this.userRepository = userRepository;
+    }
 
-        try {
-            if (userId.length() > 0) {
-                userRepository.memberLogin(userId, userPw);
-                logger.info("success");
-            }
-        } catch (Exception e) {
-            logger.error("login fail");
-        }
-
+    public void login(UserVO userVO) throws Exception {
+        logger.info("Impl 데이터 확인 : " + userVO);
+        userRepository.memberLogin(userVO);
     }
 }

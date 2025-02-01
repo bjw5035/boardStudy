@@ -1,8 +1,10 @@
 package com.example.boardStudy.service;
 
+import com.example.boardStudy.vo.UserVO;
+
 public interface UserService {
 
-    void login(String userId, String userPw) throws Exception;
+    public void login(UserVO userVO) throws Exception;
 
 }
 
