@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
@@ -11,12 +11,12 @@
     <typeAlias type="com.example.boardStudy.dao.admin.BoardDAO" alias="BoardDao" />
   </typeAliases>
   <mappers>
-<!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
-<!--    <mapper resource="/dao/admin/UserDao.java" />-->
+    <!--    <mapper resource="/sqlmap/mapper/web-mapper.xml" />-->
+    <!--    <mapper resource="/dao/admin/UserDao.java" />-->
     <mapper resource="/dao/admin/UserDAO.java" />
-<!--    <mapper resource="/dao/admin/BoardDao.java" />-->
-    <mapper resource="/sqlmap/mapper/UserMapper-sql.xml" />
-    <mapper resource="/sqlmap/mapper/BoardMapper-sql.xml" />
+    <!--    <mapper resource="/dao/admin/BoardDao.java" />-->
+    <mapper resource="/sqlmap/mapper/UserMapper.xml" />
+    <mapper resource="/sqlmap/mapper/BoardMapper.xml" />
   </mappers>
 
 </configuration>

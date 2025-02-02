@@ -1,13 +1,27 @@
-//package com.example.boardStudy.config;
+package com.example.boardStudy.config;
 
 //import com.example.boardStudy.dao.admin.BoardDAO;
 //import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.ComponentScan;
-//import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-//@ComponentScan(basePackages = "com.example")
-//public class AppConfig {
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+@Configuration
+@ComponentScan(basePackages = "com.example")
+public class AppConfig {
+
+    /**
+     * resources의 application.properties 설정
+     * @return
+     */
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
+    
     // 추가 설정이 필요하면 여기에 추가
 
 //    @Bean
@@ -40,5 +54,5 @@
 //        };
 //    }
 
-//}
+}
 
