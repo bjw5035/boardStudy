@@ -1,10 +1,12 @@
 package com.example.boardStudy.service;
 
-import com.example.boardStudy.vo.UserVO;
+import com.example.boardStudy.vo.JoinVO;
+import com.example.boardStudy.vo.LoginVO;
 
 public interface UserService {
 
-    public void login(UserVO userVO) throws Exception;
+    JoinVO join(JoinVO joinVO);
+    void login(LoginVO loginVO) throws Exception;
 
 }
 

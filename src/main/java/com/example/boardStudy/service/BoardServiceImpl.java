@@ -1,6 +1,6 @@
 package com.example.boardStudy.service;
 
-import com.example.boardStudy.repository.admin.BoardRepository;
+import com.example.boardStudy.dao.admin.BoardDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ public class BoardServiceImpl implements BoardService {
 
     private Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 
-    private BoardRepository boardRepository;
+    private BoardDAO boardDAO;
 
     public String content(int id, String title, String content, String author) {
 

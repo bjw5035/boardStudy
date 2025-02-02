@@ -17,7 +17,7 @@ public class ErrorController {
 
     @RequestMapping(value = "LoginError", method = RequestMethod.GET)
     public String loginErrorPage() {
-        logger.info("Login Error Page�Դϴ�.");
+        logger.info("Login Error Page 테스트");
         return "/LoginError";
     }
 

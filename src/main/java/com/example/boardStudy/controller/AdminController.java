@@ -1,7 +1,8 @@
 package com.example.boardStudy.controller;
 
 import com.example.boardStudy.service.UserService;
-import com.example.boardStudy.vo.UserVO;
+import com.example.boardStudy.vo.JoinVO;
+import com.example.boardStudy.vo.LoginVO;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -11,18 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@RequiredArgsConstructor
 public class AdminController {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired private UserService userService;
+    @Autowired
+    private UserService userService;
 
     /*
      * 로그인 페이지
@@ -35,6 +33,7 @@ public class AdminController {
 
     /**
      * 로그인 기능 로직
+     *
      * @param userId
      * @param userPw
      * @param model
@@ -47,13 +46,24 @@ public class AdminController {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
 
-        UserVO userVO = new UserVO();
-        userVO.setUserId(userId);
-        userVO.setUserPw(userPw);
-        logger.info("userVO : " + userVO);
+        LoginVO loginVO = new LoginVO();
+        loginVO.setUserId(userId);
+        loginVO.setUserPw(userPw);
+        logger.info("userVO : " + loginVO);
 
-        userService.login(userVO);
+        userService.login(loginVO);
 
     }
 
+    @PostMapping(value = "/auth/Join")
+    public String join(@RequestParam("joinId") Long joinId, @RequestParam("joinPw") String joinPw, @RequestParam("joinName") String joinName) throws Exception {
+        logger.info("joinId : " + joinId + "joinPw : " + joinPw + "joinName : " + joinName);
+        JoinVO joinVO = new JoinVO();
+        joinVO.setJoinId(joinId);
+        joinVO.setJoinPw(joinPw);
+        joinVO.setJoinName(joinName);
+
+        userService.join(joinVO);
+        return "redirect:/board";
+    }
 }

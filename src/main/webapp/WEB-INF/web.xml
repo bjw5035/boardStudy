@@ -28,6 +28,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+<!--            <param-value>/WEB-INF/spring/root-context.xml</param-value>-->
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -39,7 +40,7 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+    <param-value>/WEB-INF/spring/root-context.xml, /WEB-INF/spring/appServlet/servlet-context.xml</param-value>
   </context-param>
 
   <listener>
@@ -47,6 +48,8 @@
   </listener>
 
     <!-- spring_web이름이 둘이상 발견한 이슈로 추가 -->
-    <absolute-ordering></absolute-ordering>
+    <absolute-ordering>
+<!--      <name>spring_web</name>-->
+    </absolute-ordering>
 
 </web-app>

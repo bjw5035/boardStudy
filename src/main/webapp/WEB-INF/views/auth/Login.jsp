@@ -17,6 +17,7 @@
         </p>
 <%--        <button class="ui-button" id="login" name="btnLogin" onclick="login()">로그인</button>--%>
         <button class="ui-button" id="login" name="btnLogin" type="submit">로그인</button>
+        <a href="Join.jsp" name="join">회원가입</a>
         <button class="ui-button" id="logOut" name="btnLogOut">로그아웃</button>
     </div>
 </form>
