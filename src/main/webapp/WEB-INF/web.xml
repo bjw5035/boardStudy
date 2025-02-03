@@ -21,27 +21,26 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- Processes application requests -->
-    <servlet>
-        <servlet-name>appServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-<!--            <param-value>/WEB-INF/spring/root-context.xml, /WEB-INF/spring/appServlet/servlet-context.xml</param-value>-->
-            <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>appServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+    <param-value>/WEB-INF/spring/root-context.xml</param-value>
   </context-param>
+
+  <!-- Processes application requests -->
+  <servlet>
+      <servlet-name>appServlet</servlet-name>
+      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+      <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>appServlet</servlet-name>
+      <url-pattern>/</url-pattern>
+  </servlet-mapping>
 
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -49,7 +48,7 @@
 
     <!-- spring_web이름이 둘이상 발견한 이슈로 추가 -->
     <absolute-ordering>
-<!--      <name>spring_web</name>-->
+      <name>spring_web</name>
     </absolute-ordering>
 
 </web-app>

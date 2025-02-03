@@ -11,10 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private final UserDAO userDAO; // DAO
 
     @Autowired
-    private UserDAO userDAO; // DAO
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
     public JoinVO join(JoinVO joinVO) {

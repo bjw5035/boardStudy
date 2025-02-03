@@ -26,34 +26,34 @@ public class AppConfig {
     
     // 추가 설정이 필요하면 여기에 추가
 
-    @Bean
-    public UserDAO userDao() {
-        return new UserDAO() {
-            @Override
-            public JoinVO join(JoinVO joinVO) {
-                return null;
-            }
+//    @Bean
+//    public UserDAO userDao() {
+//        return new UserDAO() {
+//            @Override
+//            public JoinVO join(JoinVO joinVO) {
+//                return null;
+//            }
+//
+//            @Override
+//            public void memberLogin(LoginVO loginVO) {
+//
+//            }
+//        };
+//    }
 
-            @Override
-            public void memberLogin(LoginVO loginVO) {
+//    @Bean
+//    public UserService userService() {
+//        return new UserServiceImpl();
+//    }
 
-            }
-        };
-    }
-
-    @Bean
-    public UserService userService() {
-        return new UserServiceImpl();
-    }
-
-    @Bean
-    public BoardDAO boardDao() {
-        return new BoardDAO() {
+//    @Bean
+//    public BoardDAO boardDao() {
+//        return new BoardDAO() {
 //            @Override
 //            public void boardInsert(int id, String title, String content, String author) {
 //            }
-        };
-    }
+//        };
+//    }
 
 }
 
