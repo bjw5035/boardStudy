@@ -14,3 +14,9 @@ function login() {
   }
   return;
 }
+
+function goToSignup(event) {
+  event.preventDefault();
+  window.location.href = "signup.jsp";
+
+}

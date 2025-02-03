@@ -5,14 +5,6 @@
   xmlns:context="http://www.springframework.org/schema/context"
   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Root Context: defines shared resources visible to all other web components -->
-    <!-- for mysql conection Pool-->
-<!--    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">-->
-<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
-<!--        <property name="url" value="jdbc:mysql://localhost:3306/studyboard?serverTimezone=UTC"/>-->
-<!--        <property name="username" value="user1"/>-->
-<!--        <property name="password" value="rootpass1!!"/>-->
-<!--    </bean>-->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${config.datasource.driver-class-name}" />
@@ -24,16 +16,13 @@
     <context:property-placeholder location="classpath:application.properties"/>
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-<!--        <property name="configLocation" value="classpath*:sqlmap/mybatis-config.xml"/>-->
-        <property name="configLocation" value="classpath*:sqlmap/*.xml"/>
-
+        <property name="configLocation" value="classpath*:sqlmap/mybatis-config.xml"/>
     </bean>
 
     <!-- 마이바티스 SqlSession 등록하기 (xml 방식으로 bean 등록) -->
     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- mybatis-config.xml 설정 불러오기 -->
-<!--        <property name="configLocation" value="classpath*:sqlmap/mybatis-config.xml" />-->
-        <property name="configLocation" value="classpath*:sqlmap/*.xml" />
+        <property name="configLocation" value="classpath*:sqlmap/mybatis-config.xml" />
 
         <property name="dataSource" ref="dataSource" />
     </bean>
@@ -41,7 +30,6 @@
     <!-- SqlSessionTemplate : 기본 SQL 실행 + 트랜잭션 관리 역할을 하는 SqlSession을 생성할 수 있게 하는 객체(Spring bean으로 등록해야함.) -->
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory"/>
-<!--        <constructor-arg ref="sqlSessionFactoryBean" />-->
     </bean>
 
     <!-- MyBatis Mapper 스캔 설정 -->
@@ -55,6 +43,15 @@
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+<!--   Root Context: defines shared resources visible to all other web components -->
+<!--   for mysql conection Pool-->
+<!--        <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">-->
+<!--            <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--            <property name="url" value=""/>-->
+<!--            <property name="username" value=""/>-->
+<!--            <property name="password" value=""/>-->
+<!--        </bean>-->
 
     <!-- 스프링에서 사용하는 proxy를 이용한 트랜잭션 제어가 안될 경우 추가적인 트랜잭션 매니저를 추가해서 문제 해결 -->
 <!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->

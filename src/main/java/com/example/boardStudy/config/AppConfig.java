@@ -1,12 +1,14 @@
 package com.example.boardStudy.config;
 
-//import com.example.boardStudy.dao.admin.BoardDAO;
-//import org.springframework.context.annotation.Bean;
+import com.example.boardStudy.dao.admin.BoardDAO;
+import com.example.boardStudy.dao.admin.UserDAO;
+import com.example.boardStudy.service.UserService;
+import com.example.boardStudy.service.UserServiceImpl;
+import com.example.boardStudy.vo.JoinVO;
+import com.example.boardStudy.vo.LoginVO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
@@ -24,35 +26,34 @@ public class AppConfig {
     
     // 추가 설정이 필요하면 여기에 추가
 
-//    @Bean
-//    public UserRepository userDao() {
-//        return new UserRepository() {
-//            @Override
-//            public void memberLogin(LoginVO loginVO) {}
-//        };
-//    }
+    @Bean
+    public UserDAO userDao() {
+        return new UserDAO() {
+            @Override
+            public JoinVO join(JoinVO joinVO) {
+                return null;
+            }
 
-//    @Bean
-//    public UserService userService() {
-//        return new UserService() {
-//            @Override
-//            public void login(LoginVO loginVO) throws Exception {}
-//
-//            @Override
-//            public JoinVO join(JoinVO joinVO) {
-//                return joinVO;
-//            }
-//        };
-//    }
+            @Override
+            public void memberLogin(LoginVO loginVO) {
 
-//    @Bean
-//    public BoardDAO boardDao() {
-//        return new BoardDAO() {
+            }
+        };
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserServiceImpl();
+    }
+
+    @Bean
+    public BoardDAO boardDao() {
+        return new BoardDAO() {
 //            @Override
 //            public void boardInsert(int id, String title, String content, String author) {
 //            }
-//        };
-//    }
+        };
+    }
 
 }
 

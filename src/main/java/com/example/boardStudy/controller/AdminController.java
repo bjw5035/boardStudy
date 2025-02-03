@@ -55,7 +55,17 @@ public class AdminController {
 
     }
 
-    @PostMapping(value = "/auth/Join")
+    /**
+     * 회원가입
+     * @return
+     * @throws Exception
+     */
+    @GetMapping(value = "/auth/Signup")
+    public String join() throws Exception {
+        return "/auth/Signup";
+    }
+    
+    @PostMapping(value = "/auth/Signup")
     public String join(@RequestParam("joinId") Long joinId, @RequestParam("joinPw") String joinPw, @RequestParam("joinName") String joinName) throws Exception {
         logger.info("joinId : " + joinId + "joinPw : " + joinPw + "joinName : " + joinName);
         JoinVO joinVO = new JoinVO();
