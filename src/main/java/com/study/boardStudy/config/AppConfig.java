@@ -1,18 +1,13 @@
-package com.example.boardStudy.config;
+package com.study.boardStudy.config;
 
-import com.example.boardStudy.dao.admin.BoardDAO;
-import com.example.boardStudy.dao.admin.UserDAO;
-import com.example.boardStudy.service.UserService;
-import com.example.boardStudy.service.UserServiceImpl;
-import com.example.boardStudy.vo.JoinVO;
-import com.example.boardStudy.vo.LoginVO;
+//import com.example.boardStudy.dao.admin.BoardDAO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@ComponentScan(basePackages = "com.example")
+@ComponentScan(basePackages = "com.study")
 public class AppConfig {
 
     /**

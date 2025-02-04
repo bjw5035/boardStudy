@@ -1,7 +1,7 @@
-package com.example.boardStudy.dao.admin;
+package com.study.boardStudy.dao.admin;
 
-import com.example.boardStudy.vo.JoinVO;
-import com.example.boardStudy.vo.LoginVO;
+import com.study.boardStudy.vo.JoinVO;
+import com.study.boardStudy.vo.LoginVO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

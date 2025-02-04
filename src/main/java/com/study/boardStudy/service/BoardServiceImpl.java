@@ -1,6 +1,7 @@
+/*
 package com.example.boardStudy.service;
 
-import com.example.boardStudy.dao.admin.BoardDAO;
+//import com.example.boardStudy.dao.admin.BoardDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,3 +25,4 @@ public class BoardServiceImpl implements BoardService {
         return "Post Success";
     };
 }
+*/

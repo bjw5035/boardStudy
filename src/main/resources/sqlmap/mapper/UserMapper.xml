@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.example.boardStudy.dao.admin.UserDAO">
+<mapper namespace="com.study.boardStudy.dao.admin.UserDAO">
 
 
   <!-- 회원가입 -->
@@ -15,7 +15,7 @@
                                        파라미터 객체의 keyProperty속성에 넣어준다. 사용법은 DAO에서 확인 가능.
       <![CDATA[ : 원시(Raw) 문자열을 나타낸다. <![CDATA[안에 있는 문자열은 <등의 태그 문자가 있더라도 인식하지 않는다.
   -->
-  <insert id="join" parameterType="com.example.boardStudy.vo.JoinVO">
+  <insert id="join" parameterType="com.study.boardStudy.vo.JoinVO">
       <![CDATA[
         INSERT INTO members
           (id
@@ -36,7 +36,7 @@
   <!-- 로그인 -->
   <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
   <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
-  <select id="memberLogin" parameterType="com.example.boardStudy.vo.LoginVO">
+  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO">
 		<![CDATA[
       select *
       from members

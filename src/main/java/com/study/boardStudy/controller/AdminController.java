@@ -1,10 +1,9 @@
-package com.example.boardStudy.controller;
+package com.study.boardStudy.controller;
 
-import com.example.boardStudy.service.UserService;
-import com.example.boardStudy.vo.JoinVO;
-import com.example.boardStudy.vo.LoginVO;
+import com.study.boardStudy.service.UserService;
+import com.study.boardStudy.vo.JoinVO;
+import com.study.boardStudy.vo.LoginVO;
 import javax.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

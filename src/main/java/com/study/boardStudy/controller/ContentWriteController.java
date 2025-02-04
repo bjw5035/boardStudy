@@ -1,7 +1,8 @@
-package com.example.boardStudy.controller;
+/*
+package com.study.boardStudy.controller;
 
-import com.example.boardStudy.service.BoardService;
-import com.example.boardStudy.vo.PostVO;
+import com.study.boardStudy.service.BoardService;
+import com.study.boardStudy.vo.PostVO;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -17,22 +18,26 @@ public class ContentWriteController {
 
     private BoardService boardService;
 
-    /**
+    */
+/**
      * 글쓰기 화면
      * @param model
      * @return
-     */
+     *//*
+
     @GetMapping(value = "/Write")
     public String writeView(Model model) {
         return "/contentWrite/Write";
     }
 
-    /**
+    */
+/**
      * 글쓰기 기능 로직
      * @param userId
      * @param model
      * @return
-     */
+     *//*
+
     @PostMapping(value = "/Write")
     public String contentWrite(@SessionAttribute(name = "userId", required = false) String userId, Model model) {
 
@@ -50,3 +55,4 @@ public class ContentWriteController {
     }
 
 }
+*/

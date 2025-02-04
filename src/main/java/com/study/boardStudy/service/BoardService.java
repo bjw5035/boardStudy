@@ -1,4 +1,5 @@
-package com.example.boardStudy.service;
+/*
+package com.study.boardStudy.service;
 
 public interface BoardService {
 
@@ -6,3 +7,4 @@ public interface BoardService {
 
 
 }
+*/
