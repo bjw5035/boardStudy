@@ -5,15 +5,15 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class JoinVO {
+public class SignupVO {
 
-    private Long joinId;
+    private String joinId;
     private String joinName;
     private String joinPw;
 
-    public JoinVO() {}
+    public SignupVO() {}
 
-    public JoinVO(Long joinId, String joinName, String joinPw) {
+    public SignupVO(String joinId, String joinName, String joinPw) {
         this.joinId = joinId;
         this.joinName = joinName;
         this.joinPw = joinPw;

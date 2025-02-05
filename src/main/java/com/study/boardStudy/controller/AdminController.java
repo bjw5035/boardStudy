@@ -1,7 +1,7 @@
 package com.study.boardStudy.controller;
 
 import com.study.boardStudy.service.UserService;
-import com.study.boardStudy.vo.JoinVO;
+import com.study.boardStudy.vo.SignupVO;
 import com.study.boardStudy.vo.LoginVO;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -25,12 +25,14 @@ public class AdminController {
         this.userService = userService;
     }
 
-    /*
+    /**
      * 로그인 페이지
-     * */
+     * @return
+     * @throws Exception
+     */
     @GetMapping(value = "/auth/Login")
     public String loginPage() throws Exception {
-        logger.info("Login Page 이동입니다.");
+        logger.info("Login Page 입니다.");
         return "/auth/Login";
     }
 
@@ -64,19 +66,13 @@ public class AdminController {
      * @throws Exception
      */
     @GetMapping(value = "/auth/Signup")
-    public String join() throws Exception {
+    public String signUpGet() throws Exception {
         return "/auth/Signup";
     }
     
     @PostMapping(value = "/auth/Signup")
-    public String join(@RequestParam("joinId") Long joinId, @RequestParam("joinPw") String joinPw, @RequestParam("joinName") String joinName) throws Exception {
-        logger.info("joinId : " + joinId + "joinPw : " + joinPw + "joinName : " + joinName);
-        JoinVO joinVO = new JoinVO();
-        joinVO.setJoinId(joinId);
-        joinVO.setJoinPw(joinPw);
-        joinVO.setJoinName(joinName);
-
-        userService.join(joinVO);
+    public String signUpPost(SignupVO signupVO) throws Exception {
+        userService.join(signupVO);
         return "redirect:/board";
     }
 }

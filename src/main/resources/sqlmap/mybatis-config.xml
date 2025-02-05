@@ -7,7 +7,7 @@
 <!--    <typeAlias type="com.example.boardStudy.vo.LoginVO" alias="UserVO"/>-->
 <!--    <typeAlias type="com.example.boardStudy.vo.PostVO" alias="PostVO"/>-->
 
-    <typeAlias type="com.study.boardStudy.dao.admin.UserDAO" alias="UserDao" />
+    <typeAlias type="com.study.boardStudy.dao.admin.SignupDAO" alias="SignupDAO" />
 <!--    <typeAlias type="com.example.boardStudy.dao.admin.BoardDAO" alias="BoardDao" />-->
   </typeAliases>
   <mappers>

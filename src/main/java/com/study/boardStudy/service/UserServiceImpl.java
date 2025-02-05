@@ -1,7 +1,7 @@
 package com.study.boardStudy.service;
 
-import com.study.boardStudy.dao.admin.UserDAO;
-import com.study.boardStudy.vo.JoinVO;
+import com.study.boardStudy.dao.admin.SignupDAO;
+import com.study.boardStudy.vo.SignupVO;
 import com.study.boardStudy.vo.LoginVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,20 +13,20 @@ public class UserServiceImpl implements UserService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final UserDAO userDAO; // DAO
+    private final SignupDAO signupDAO; // DAO
 
     @Autowired
-    public UserServiceImpl(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    public UserServiceImpl(SignupDAO signupDAO) {
+        this.signupDAO = signupDAO;
     }
 
     @Override
-    public JoinVO join(JoinVO joinVO) {
-        return userDAO.join(joinVO);
+    public SignupVO join(SignupVO signupVO) {
+        return signupDAO.join(signupVO);
     }
 
     public void login(LoginVO loginVO) throws Exception {
         logger.info("Impl 데이터 확인 : " + loginVO);
-        userDAO.memberLogin(loginVO);
+        signupDAO.memberLogin(loginVO);
     }
 }

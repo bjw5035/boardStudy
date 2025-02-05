@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>회원가입</h2>
-<form action="Signup.jsp" method="POST">
+<form action="" method="POST">
     <div>
         <p>
             <label for="joinId">아이디 : </label>

@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Login</h2>
-<form action="Login" method="POST">
+<form action="" method="POST">
     <div>
         <p>
             <label for="userId">아이디 : </label>
@@ -19,9 +19,9 @@
     </div>
     <button class="ui-button" id="login" name="btnLogin" type="submit">로그인</button>
 </form>
-    <button class="ui-button" type="button" onclick="goToSignup(event)">회원가입</button>
+    <button type="button" onclick="location.href='Signup'">회원가입</button>
     <button class="ui-button" id="logOut" name="btnLogOut">로그아웃</button>
 
-    <script type="text/javascript" src="<c:url value="/WEB-INF/js/user.js"/>"></script>
+<%--    <script type="text/javascript" src="<c:url value="/WEB-INF/js/user.js"/>"></script>--%>
 </body>
 </html>
