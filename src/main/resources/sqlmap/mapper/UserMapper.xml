@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.study.boardStudy.dao.admin.SignupDAO">
+<mapper namespace="com.study.boardStudy.dao.admin.UserDAO">
 
 
   <!-- 회원가입 -->
@@ -23,18 +23,16 @@
   </insert>
 <!--  <insert id="join" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">-->
 
-<!--	</insert>-->
-
   <!-- 로그인 -->
   <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
   <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
-  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO">
+  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO" resultType="string">
 		<![CDATA[
-      select *
-      from members
-      where 1 = 1
-        AND id = #{userId}
-        AND pw = #{userPw};
+    SELECT *
+    FROM members
+    WHERE 1 = 1
+      AND id = #{userId}
+      AND pw = #{userPw};
     ]]>
 	</select>
 

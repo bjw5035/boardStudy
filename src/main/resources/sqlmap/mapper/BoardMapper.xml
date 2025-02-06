@@ -7,21 +7,11 @@
 
   <!-- 게시물 등록	-->
   <insert id="boardInsert" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
-		<![CDATA[
-    INSERT INTO webdb.posts
-      (ID
-			,TITLE
-			,CONTENT
-			,AUTHOR
-			)
-    VALUES
-      (#{id}
-		  ,#{title}
-			,#{content}
-			,#{author}
-			)
+    <![CDATA[
+    INSERT INTO webdb.posts (ID, TITLE, CONTENT, AUTHOR)
+    VALUES ( #{id} , #{title} , #{content} , #{author});
     ]]>
-	</insert>
+  </insert>
 
   <!-- 게시물 리스트 -->
 <!--  <select id="board_list" resultType="hashmap">-->

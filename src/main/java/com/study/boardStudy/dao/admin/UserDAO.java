@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
  * DAO 또는 JPA 레파지토리
  */
 @Mapper
-public interface SignupDAO {
+public interface UserDAO {
 
     int join(SignupVO signupVO);
-    void memberLogin(LoginVO loginVO);
+    String memberLogin(LoginVO loginVO);
 }

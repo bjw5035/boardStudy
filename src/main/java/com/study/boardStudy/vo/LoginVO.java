@@ -11,18 +11,12 @@ import lombok.Setter;
 public class LoginVO {
 
     private String userId;
-//    private String userName;
     private String userPw;
 
     public LoginVO(String userId, String userPw) {
         this.userId = userId;
         this.userPw = userPw;
     }
-
-//    public UserVO(UserVO userVO) {
-//        this.userId = userVO.getUserId();
-//        this.userPw = userVO.getUserPw();
-//    }
 
     public LoginVO() {}
 

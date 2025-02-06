@@ -41,13 +41,11 @@ public class AdminController {
      *
      * @param userId
      * @param userPw
-     * @param model
-     * @param session
      * @return
      * @throws Exception
      */
     @PostMapping(value = "/auth/Login")
-    public void login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, Model model, HttpSession session) throws Exception {
+    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw) throws Exception {
         logger.info("userId : " + userId);
         logger.info("Data userId: " + userId + "userPw : " + userPw);
 
@@ -57,7 +55,7 @@ public class AdminController {
         logger.info("userVO : " + loginVO);
 
         userService.login(loginVO);
-
+        return "redirect:/board/Board";
     }
 
     /**
@@ -74,7 +72,7 @@ public class AdminController {
     public String signUpPost(SignupVO signupVO) throws Exception {
         boolean join = userService.join(signupVO);
         if (join) {
-            return "redirect:/board/Board";
+            return "redirect:/auth/Login";
         } else {
             return "/auth/Signup";
         }

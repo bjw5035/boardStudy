@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/board")
 public class BoardController {
 
-    private Logger logger = LoggerFactory.getLogger(BoardController.class);
+    private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
     private final BoardService boardService;
 
