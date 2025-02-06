@@ -46,15 +46,9 @@ public class AdminController {
      */
     @PostMapping(value = "/auth/Login")
     public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw) throws Exception {
-        logger.info("userId : " + userId);
-        logger.info("Data userId: " + userId + "userPw : " + userPw);
 
-        LoginVO loginVO = new LoginVO();
-        loginVO.setUserId(userId);
-        loginVO.setUserPw(userPw);
-        logger.info("userVO : " + loginVO);
+        userService.login(userId, userPw);
 
-        userService.login(loginVO);
         return "redirect:/board/Board";
     }
 

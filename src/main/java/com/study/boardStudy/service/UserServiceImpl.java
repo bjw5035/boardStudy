@@ -3,6 +3,8 @@ package com.study.boardStudy.service;
 import com.study.boardStudy.dao.admin.UserDAO;
 import com.study.boardStudy.vo.SignupVO;
 import com.study.boardStudy.vo.LoginVO;
+import java.util.List;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,19 +29,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String login(LoginVO loginVO) {
-        String result = userDAO.memberLogin(loginVO);
-        logger.info(result);
-
+    public String login(String userId, String userPw) {
         try {
-            if (result != null && !result.isEmpty()) {
-                return result;
-            }
+            //TODO 2025-02-07 쿼리에서 ID 비교 방법 필요
+            //TODO 2025-02-07 로그인 ID 비교 후 redirect 고려
+            String result = userDAO.memberLogin(userId, userPw);
+            logger.info("result : " + result);
         }catch (Exception e) {
-            logger.error(e.getMessage());
+            return e.getMessage();
         }
         return null;
     }
+
+//    @Override
+//    public boolean validateLogin(LoginVO loginVO) {
+//
+//        return false;
+//    }
 
 
 }

@@ -26,7 +26,7 @@
   <!-- 로그인 -->
   <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
   <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
-  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO" resultType="string">
+  <select id="memberLogin" parameterType="string" resultType="string">
 		<![CDATA[
     SELECT *
     FROM members
@@ -35,6 +35,11 @@
       AND pw = #{userPw};
     ]]>
 	</select>
+  <select id="validateLogin" parameterType="com.study.boardStudy.vo.LoginVO" resultType="java.lang.Boolean">
+    <![CDATA[
+    select * from
+    ]]>
+  </select>
 
   <!-- 마이페이지 수정 -->
   <!--<update id="update_myModify">
