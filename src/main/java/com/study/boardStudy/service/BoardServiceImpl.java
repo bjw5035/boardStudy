@@ -1,9 +1,9 @@
-/*
-package com.example.boardStudy.service;
+package com.study.boardStudy.service;
 
-//import com.example.boardStudy.dao.admin.BoardDAO;
+import com.study.boardStudy.dao.admin.BoardDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,6 +11,7 @@ public class BoardServiceImpl implements BoardService {
 
     private Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 
+    @Autowired
     private BoardDAO boardDAO;
 
     public String content(int id, String title, String content, String author) {
@@ -25,4 +26,3 @@ public class BoardServiceImpl implements BoardService {
         return "Post Success";
     };
 }
-*/

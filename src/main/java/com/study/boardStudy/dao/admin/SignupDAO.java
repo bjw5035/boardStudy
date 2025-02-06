@@ -10,6 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SignupDAO {
 
-    SignupVO join(SignupVO signupVO);
+    int join(SignupVO signupVO);
     void memberLogin(LoginVO loginVO);
 }

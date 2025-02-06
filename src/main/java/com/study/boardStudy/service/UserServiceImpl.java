@@ -21,8 +21,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public SignupVO join(SignupVO signupVO) {
-        return signupDAO.join(signupVO);
+    public boolean join(SignupVO signupVO) {
+        int result = signupDAO.join(signupVO);
+        return result > 0;
     }
 
     public void login(LoginVO loginVO) throws Exception {

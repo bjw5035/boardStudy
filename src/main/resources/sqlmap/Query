@@ -1,0 +1,10 @@
+﻿-- 회원가입, 로그인 쿼리
+CREATE TABLE MEMBERS
+(
+    SEQ  INT AUTO_INCREMENT
+        PRIMARY KEY,    -- 자동 증가하는 숫자
+    ID   VARCHAR(255)             NOT NULL, -- String 값으로 입력
+    PW   VARCHAR(255)             NULL, -- 비밀번호
+    NAME VARCHAR(100) DEFAULT '0' NOT NULL  -- 이름
+);
+

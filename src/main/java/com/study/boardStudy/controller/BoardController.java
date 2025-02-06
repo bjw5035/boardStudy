@@ -1,4 +1,3 @@
-/*
 package com.study.boardStudy.controller;
 
 import com.study.boardStudy.service.BoardService;
@@ -23,12 +22,11 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-    */
-/**
+    /**
      * 게시판 홈 화면
      * @param model
      * @return
-     *//*
+     */
 
     @RequestMapping(value = "/Board", method = RequestMethod.GET)
     public String boardView(Model model) {
@@ -38,4 +36,3 @@ public class BoardController {
 
 
 }
-*/

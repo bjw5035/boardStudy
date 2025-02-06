@@ -72,7 +72,11 @@ public class AdminController {
     
     @PostMapping(value = "/auth/Signup")
     public String signUpPost(SignupVO signupVO) throws Exception {
-        userService.join(signupVO);
-        return "redirect:/board";
+        boolean join = userService.join(signupVO);
+        if (join) {
+            return "redirect:/board/Board";
+        } else {
+            return "/auth/Signup";
+        }
     }
 }

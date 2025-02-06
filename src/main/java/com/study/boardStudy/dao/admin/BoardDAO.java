@@ -1,11 +1,9 @@
-/*
-package com.example.boardStudy.dao.admin;
+package com.study.boardStudy.dao.admin;
 
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
-@Repository
+@Mapper
 public interface BoardDAO {
 
-    static void boardInsert(int id, String title, String content, String writer) throws Exception;
+    void boardInsert(int id, String title, String content, String writer);
 }
-*/

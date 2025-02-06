@@ -4,6 +4,7 @@ target/
 !**/src/main/webapp/WEB-INF/spring/
 !**/src/test/**/target/
 !**/src/main/resources/application.properties
+!**/src/main/resources/Query
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

@@ -5,7 +5,7 @@ import com.study.boardStudy.vo.LoginVO;
 
 public interface UserService {
 
-    SignupVO join(SignupVO signupVO);
+    boolean join(SignupVO signupVO);
     void login(LoginVO loginVO) throws Exception;
 
 }
