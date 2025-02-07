@@ -10,7 +10,7 @@
 
   <c:if test="${not empty sessionScope.userId}">
     <p>환영합니다, ${sessionScope.userId}</p>
-    <a href="/auth/Logout">로그아웃</a>
+    <button class="ui-button" id="logOut" name="btnLogOut" type="button">로그아웃</button>
   </c:if>
 
   <table border="1">

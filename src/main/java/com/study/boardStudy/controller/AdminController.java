@@ -76,4 +76,12 @@ public class AdminController {
             return "/auth/Signup";
         }
     }
+
+    /**
+     * 로그아웃
+     */
+    @GetMapping(value = "/auth/Logout")
+    public void logout(HttpSession session) {
+        session.invalidate();
+    }
 }

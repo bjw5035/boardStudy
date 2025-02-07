@@ -4,15 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-<!--    <typeAlias type="com.example.boardStudy.vo.LoginVO" alias="UserVO"/>-->
-<!--    <typeAlias type="com.example.boardStudy.vo.PostVO" alias="PostVO"/>-->
-
     <typeAlias type="com.study.boardStudy.dao.admin.UserDAO" alias="UserDAO" />
     <typeAlias type="com.study.boardStudy.dao.admin.BoardDAO" alias="BoardDAO" />
+    <typeAlias type="com.study.boardStudy.dao.admin.PostDAO" alias="PostDAO" />
   </typeAliases>
   <mappers>
     <mapper resource="sqlmap/mapper/UserMapper.xml" />
     <mapper resource="sqlmap/mapper/BoardMapper.xml" />
+    <mapper resource="sqlmap/mapper/ListModifyMapper.xml" />
   </mappers>
 
 </configuration>
