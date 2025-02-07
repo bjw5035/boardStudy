@@ -7,9 +7,7 @@ import java.util.Map;
 public interface UserService {
 
     boolean join(SignupVO signupVO);
-    String login(String userId, String userPw);
 
-    Map<String, Object> validateLogin(Map<String, Object> map);
-
+    boolean login(String userId, String userPw);
 }
 

@@ -30,29 +30,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String login(String userId, String userPw) {
+    public boolean login(String userId, String userPw) {
+
         try {
-            Map<String, Object> map = new HashMap<>();
-            map.put("userId", userId);
-            map.put("userPw", userPw);
-            validateLogin(map);
-            //TODO 2025-02-07 쿼리에서 ID 비교 방법 필요
-            //TODO 2025-02-07 로그인 ID 비교 후 redirect 고려
-            String result = userDAO.memberLogin(userId, userPw);
-            logger.info("result : " + result);
+
+            LoginVO loginUser = userDAO.memberLogin(new LoginVO(userId, userPw));
+            logger.info("result : " + loginUser);
+
+            if (loginUser == null) {
+                logger.error("login user is null");
+                return false; // 사용자 없음
+            }
+
+            // null 체크 및 ID, PW 검증
+            if (!loginUser.getUserId().equals(userId) || !loginUser.getUserPw().equals(userPw)){
+                return false; // 로그인 실패
+            }
+
+            return true; // 로그인 성공
         }catch (Exception e) {
-            return e.getMessage();
+            logger.error(e.getMessage());
+            return false;
         }
-        return null;
-    }
-
-    @Override
-    public Map<String, Object> validateLogin(Map<String, Object> map) {
-
-
-        return null;
 
     }
-
 
 }

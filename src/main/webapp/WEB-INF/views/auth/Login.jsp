@@ -17,6 +17,7 @@
             <input type="text" id="userPw" name="userPw">
         </p>
     </div>
+    <%-- TODO 2025-02-07 로그인 실패 시 alert 띄우기 --%>
     <button class="ui-button" id="login" name="btnLogin" type="submit">로그인</button>
 </form>
     <button type="button" onclick="location.href='Signup'">회원가입</button>

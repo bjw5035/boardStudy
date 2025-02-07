@@ -26,24 +26,16 @@
   <!-- 로그인 -->
   <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
   <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
-  <select id="memberLogin" parameterType="string" resultType="string">
+  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO" resultType="com.study.boardStudy.vo.LoginVO">
 		<![CDATA[
-    SELECT *
+    SELECT id AS userId,
+           pw AS userPw
     FROM members
-    WHERE 1 = 1
-      AND id = #{userId}
-      AND pw = #{userPw};
+    WHERE id = #{userId}
+        AND pw = #{userPw};
+
     ]]>
 	</select>
-  <select id="validateLogin" parameterType="map" resultType="map">
-    <![CDATA[
-    select *
-    from members
-    where 1 = 1
-      and #{userId} = id
-      and #{userPw} = pw;
-    ]]>
-  </select>
 
   <!-- 마이페이지 수정 -->
   <!--<update id="update_myModify">

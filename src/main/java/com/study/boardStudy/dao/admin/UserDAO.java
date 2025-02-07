@@ -12,6 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserDAO {
 
     int join(SignupVO signupVO);
-    String memberLogin(String userId, String userPw);
-//    String validateLogin(Map<String, Object> map);
+    LoginVO memberLogin(LoginVO loginVO);
 }

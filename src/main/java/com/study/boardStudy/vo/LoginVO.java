@@ -14,6 +14,12 @@ public class LoginVO {
     private String userPw;
 
     public LoginVO(String userId, String userPw) {
+        if (userId == null || userId.isEmpty()) {
+            throw new IllegalStateException("userId is null or empty");
+        }
+        if (userPw == null || userPw.isEmpty()) {
+            throw new IllegalStateException("userPw is null or empty");
+        }
         this.userId = userId;
         this.userPw = userPw;
     }
