@@ -3,6 +3,7 @@ package com.study.boardStudy.service;
 import com.study.boardStudy.dao.admin.UserDAO;
 import com.study.boardStudy.vo.SignupVO;
 import com.study.boardStudy.vo.LoginVO;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -31,6 +32,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public String login(String userId, String userPw) {
         try {
+            Map<String, Object> map = new HashMap<>();
+            map.put("userId", userId);
+            map.put("userPw", userPw);
+            validateLogin(map);
             //TODO 2025-02-07 쿼리에서 ID 비교 방법 필요
             //TODO 2025-02-07 로그인 ID 비교 후 redirect 고려
             String result = userDAO.memberLogin(userId, userPw);
@@ -41,11 +46,13 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-//    @Override
-//    public boolean validateLogin(LoginVO loginVO) {
-//
-//        return false;
-//    }
+    @Override
+    public Map<String, Object> validateLogin(Map<String, Object> map) {
+
+
+        return null;
+
+    }
 
 
 }

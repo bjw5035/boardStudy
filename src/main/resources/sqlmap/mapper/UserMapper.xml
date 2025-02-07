@@ -35,9 +35,13 @@
       AND pw = #{userPw};
     ]]>
 	</select>
-  <select id="validateLogin" parameterType="com.study.boardStudy.vo.LoginVO" resultType="java.lang.Boolean">
+  <select id="validateLogin" parameterType="map" resultType="map">
     <![CDATA[
-    select * from
+    select *
+    from members
+    where 1 = 1
+      and #{userId} = id
+      and #{userPw} = pw;
     ]]>
   </select>
 
