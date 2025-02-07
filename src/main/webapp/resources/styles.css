@@ -1,0 +1,64 @@
+﻿/* 전체 폼 스타일 */
+.form-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 라벨 스타일 */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* 입력 필드 스타일 */
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 기본 버튼 스타일 */
+.ui-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ui-button:hover {
+  background-color: #45a049;
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button {
+  background-color: #007BFF;
+}
+
+.signup-button:hover {
+  background-color: #0056b3;
+}
