@@ -1,8 +1,8 @@
 package com.study.boardStudy.service;
 
+import com.study.boardStudy.dto.ContentDTO;
+
 public interface BoardService {
 
-    String content(int id, String title, String content, String author) throws Exception;
-
-
+    String contentSelect(ContentDTO contentDTO) throws Exception;
 }

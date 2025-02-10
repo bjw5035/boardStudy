@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface PostDAO {
 
     int postInsert(ContentDTO contentDTO);
+
+    ContentDTO contentSelect(int id);
 }

@@ -12,38 +12,13 @@
     VALUES (#{title}, #{content});
     ]]>
   </insert>
-  <update id="contentInsert"/>
 
-  <!-- 게시물 리스트 -->
-<!--  <select id="board_list" resultType="hashmap">-->
-<!--		<![CDATA[-->
-<!--    INSERT INTO webdb.board-->
-<!--    (-->
-<!--      BOARD_NO,-->
-<!--      TITLE,-->
-<!--      CONTENTS,-->
-<!--      CREATE_TIME-->
-<!--    )-->
-<!--    VALUES-->
-<!--      (-->
-<!--        #{board_no},-->
-<!--        #{title},-->
-<!--        #{contents},-->
-<!--        #{create_time}-->
-<!--      )-->
-<!--    ]]>-->
-<!--	</select>-->
-
-  <!-- 마이페이지 수정 -->
-  <!--<update id="update_myModify">
+  <select id="contentSelect" resultType="com.study.boardStudy.dto.ContentDTO">
     <![CDATA[
-      UPDATE joinmember
-      set pw=#{userPw}
-        ,name=#{userName}
-      where id=#{userId}
+    select TITLE   AS 'title'
+         , CONTENT AS 'content'
+    from content_post;
     ]]>
-  </update>-->
+  </select>
 
-  <!-- <delete id="delete_account"> <![CDATA[ delete from userinfo where id
-    = #{id} ]]> </delete> -->
 </mapper>

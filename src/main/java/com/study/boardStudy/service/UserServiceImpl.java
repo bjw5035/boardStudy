@@ -13,13 +13,9 @@ public class UserServiceImpl implements UserService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final UserDAO userDAO;
-
     @Autowired
-    public UserServiceImpl(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
-
+    private UserDAO userDAO;
+    
     @Override
     public boolean join(SignupDTO signupDTO) {
         int result = userDAO.join(signupDTO);

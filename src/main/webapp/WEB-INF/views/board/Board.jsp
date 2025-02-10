@@ -15,18 +15,18 @@
 <table border="1">
     <thead>
     <tr>
-        <th>번호</th>
+        <%--        <th>번호</th>--%>
         <th>제목</th>
-        <th>작성자</th>
-        <th>작성일</th>
+        <th>내용</th>
+        <%--        <th>작성자</th>--%>
+        <%--        <th>작성일</th>--%>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
             <td><a href="${pageContext.request.contextPath}/post/${post.id}">${post.title}</a></td>
-            <td>${post.author}</td>
-            <td>${post.createdAt}</td>
+            <td>${post.content}</td>
         </tr>
     </c:forEach>
     </tbody>

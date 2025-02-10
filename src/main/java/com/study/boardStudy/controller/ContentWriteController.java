@@ -4,6 +4,7 @@ import com.study.boardStudy.dto.ContentDTO;
 import com.study.boardStudy.service.ContentWriteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,11 +14,8 @@ public class ContentWriteController {
 
     private final Logger logger = LoggerFactory.getLogger(ContentWriteController.class);
 
-    private final ContentWriteService contentWriteService;
-
-    public ContentWriteController(ContentWriteService contentWriteService) {
-        this.contentWriteService = contentWriteService;
-    }
+    @Autowired
+    private ContentWriteService contentWriteService;
 
     /**
      * 글 작성 화면
@@ -36,10 +34,10 @@ public class ContentWriteController {
         contentDTO.setTitle(title);
         contentDTO.setContent(content);
 
-        logger.info("Controller contentWrite view : " + contentDTO);
+        logger.info("Controller contentWrite view : {}", contentDTO);
 
         boolean contentInsert = contentWriteService.contentInsert(contentDTO);
-        logger.info("Content insert : " + contentInsert);
+        logger.info("Content insert : {}", contentInsert);
 
         if (!contentInsert) {
             return "redirect:/contentWrite/Write";

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/error")
 public class ErrorController {
 
-    private Logger logger = LoggerFactory.getLogger(ErrorController.class);
+    private final Logger logger = LoggerFactory.getLogger(ErrorController.class);
 
     @RequestMapping(value = "LoginError", method = RequestMethod.GET)
     public String loginErrorPage() {

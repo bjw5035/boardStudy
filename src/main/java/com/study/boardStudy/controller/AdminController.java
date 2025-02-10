@@ -17,13 +17,9 @@ public class AdminController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final UserService userService;
-
     @Autowired
-    public AdminController(UserService userService) {
-        this.userService = userService;
-    }
-
+    private UserService userService;
+    
     /**
      * 로그인 페이지
      *
