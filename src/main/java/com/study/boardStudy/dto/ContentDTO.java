@@ -1,19 +1,19 @@
-package com.study.boardStudy.vo;
+package com.study.boardStudy.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class PostVO {
+public class ContentDTO {
 
     private String title;
     private String content;
 
-    public PostVO() {
+    public ContentDTO() {
     }
 
-    public PostVO(String title, String content) {
+    public ContentDTO(String title, String content) {
         this.title = title;
         this.content = content;
     }

@@ -1,7 +1,7 @@
 package com.study.boardStudy.controller;
 
+import com.study.boardStudy.dto.ContentDTO;
 import com.study.boardStudy.service.ContentWriteService;
-import com.study.boardStudy.vo.PostVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -33,10 +33,10 @@ public class ContentWriteController {
     @PostMapping(value = "/contentWrite/Write")
     public void contentWrite(String title, String content, Model model) {
 
-        PostVO postVO = new PostVO();
-        postVO.setTitle(title);
-        postVO.setContent(content);
-        contentWriteService.contentInsert(postVO);
+        ContentDTO contentDTO = new ContentDTO();
+        contentDTO.setTitle(title);
+        contentDTO.setContent(content);
+        contentWriteService.contentInsert(contentDTO);
 
 //        List<PostVO> postList = new ArrayList<>();
 //        postList.add(new PostVO("테스트1", "글쓰기 테스트1"));

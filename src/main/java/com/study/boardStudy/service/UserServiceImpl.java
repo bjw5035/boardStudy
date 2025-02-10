@@ -1,11 +1,8 @@
 package com.study.boardStudy.service;
 
 import com.study.boardStudy.dao.admin.UserDAO;
-import com.study.boardStudy.vo.SignupVO;
-import com.study.boardStudy.vo.LoginVO;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.study.boardStudy.dto.LoginDTO;
+import com.study.boardStudy.dto.SignupDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +21,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean join(SignupVO signupVO) {
-        int result = userDAO.join(signupVO);
+    public boolean join(SignupDTO signupDTO) {
+        int result = userDAO.join(signupDTO);
         return result > 0;
     }
 
@@ -34,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
         try {
 
-            LoginVO loginUser = userDAO.memberLogin(new LoginVO(userId, userPw));
+            LoginDTO loginUser = userDAO.memberLogin(new LoginDTO(userId, userPw));
             logger.info("result : " + loginUser);
 
             if (loginUser == null) {
@@ -43,12 +40,12 @@ public class UserServiceImpl implements UserService {
             }
 
             // null 체크 및 ID, PW 검증
-            if (!loginUser.getUserId().equals(userId) || !loginUser.getUserPw().equals(userPw)){
+            if (!loginUser.getUserId().equals(userId) || !loginUser.getUserPw().equals(userPw)) {
                 return false; // 로그인 실패
             }
 
             return true; // 로그인 성공
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(e.getMessage());
             return false;
         }

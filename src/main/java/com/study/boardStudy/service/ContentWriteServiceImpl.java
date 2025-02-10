@@ -1,7 +1,7 @@
 package com.study.boardStudy.service;
 
 import com.study.boardStudy.dao.admin.PostDAO;
-import com.study.boardStudy.vo.PostVO;
+import com.study.boardStudy.dto.ContentDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class ContentWriteServiceImpl implements ContentWriteService {
     private PostDAO postDAO;
 
     @Override
-    public void contentInsert(PostVO postVO) {
-        postDAO.postInsert(postVO);
+    public void contentInsert(ContentDTO contentDTO) {
+        postDAO.postInsert(contentDTO);
     }
 }

@@ -1,7 +1,7 @@
 package com.study.boardStudy.controller;
 
+import com.study.boardStudy.dto.SignupDTO;
 import com.study.boardStudy.service.UserService;
-import com.study.boardStudy.vo.SignupVO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -69,8 +69,8 @@ public class AdminController {
     }
 
     @PostMapping(value = "/auth/Signup")
-    public String signUpPost(SignupVO signupVO) throws Exception {
-        boolean join = userService.join(signupVO);
+    public String signUpPost(SignupDTO signupDTO) throws Exception {
+        boolean join = userService.join(signupDTO);
         if (join) {
             return "redirect:/auth/Login";
         } else {

@@ -1,9 +1,9 @@
 package com.study.boardStudy.service;
 
-import com.study.boardStudy.vo.PostVO;
+import com.study.boardStudy.dto.ContentDTO;
 
 public interface ContentWriteService {
 
-    void contentInsert(PostVO postVO);
+    void contentInsert(ContentDTO contentDTO);
 
 }
