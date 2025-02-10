@@ -2,13 +2,12 @@ package com.study.boardStudy.controller;
 
 import com.study.boardStudy.service.UserService;
 import com.study.boardStudy.vo.SignupVO;
-import com.study.boardStudy.vo.LoginVO;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +26,7 @@ public class AdminController {
 
     /**
      * 로그인 페이지
+     *
      * @return
      * @throws Exception
      */
@@ -59,6 +59,7 @@ public class AdminController {
 
     /**
      * 회원가입
+     *
      * @return
      * @throws Exception
      */
@@ -66,7 +67,7 @@ public class AdminController {
     public String signUpGet() throws Exception {
         return "/auth/Signup";
     }
-    
+
     @PostMapping(value = "/auth/Signup")
     public String signUpPost(SignupVO signupVO) throws Exception {
         boolean join = userService.join(signupVO);
@@ -81,7 +82,12 @@ public class AdminController {
      * 로그아웃
      */
     @GetMapping(value = "/auth/Logout")
-    public void logout(HttpSession session) {
-        session.invalidate();
+    public String logout(HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/auth/Login";
     }
+
 }

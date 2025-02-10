@@ -5,12 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@RequestMapping("/board")
 public class BoardController {
 
     private final Logger logger = LoggerFactory.getLogger(BoardController.class);
@@ -24,15 +21,20 @@ public class BoardController {
 
     /**
      * 게시판 홈 화면
-     * @param model
-     * @return
      */
-
-    @RequestMapping(value = "/Board", method = RequestMethod.GET)
-    public String boardView(Model model) {
+    @GetMapping(value = "/board/Board")
+    public String boardView() {
+        logger.info("board view");
         return "/board/Board";
     }
 
-
+    /**
+     * 글 작성 화면
+     */
+    @GetMapping(value = "/contentWrite/Write")
+    public String contentWrite() {
+        logger.info("contentWrite view");
+        return "/contentWrite/Write";
+    }
 
 }

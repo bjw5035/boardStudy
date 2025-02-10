@@ -3,37 +3,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Board</title>
+    <title>Board</title>
 </head>
 <body>
-  <h1>Board</h1>
+<h1>Board</h1>
 
-  <c:if test="${not empty sessionScope.userId}">
+<c:if test="${not empty sessionScope.userId}">
     <p>환영합니다, ${sessionScope.userId}</p>
-    <button class="ui-button" id="logOut" name="btnLogOut" type="button">로그아웃</button>
-  </c:if>
+</c:if>
 
-  <table border="1">
+<table border="1">
     <thead>
-      <tr>
+    <tr>
         <th>번호</th>
         <th>제목</th>
         <th>작성자</th>
         <th>작성일</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      <c:forEach var="post" items="${postList}">
+    <c:forEach var="post" items="${postList}">
         <tr>
-          <td><a href="${pageContext.request.contextPath}/post/${post.id}">${post.title}</a></td>
-          <td>${post.author}</td>
-          <td>${post.createdAt}</td>
+            <td><a href="${pageContext.request.contextPath}/post/${post.id}">${post.title}</a></td>
+            <td>${post.author}</td>
+            <td>${post.createdAt}</td>
         </tr>
-      </c:forEach>
+    </c:forEach>
     </tbody>
-  </table>
-<p>
-  <a href="/contentWrite/Write">글쓰기</a>
-</p>
+</table>
+
+<div class="button-group">
+    <button class="ui-button write-button" id="write" name="btnWrite" type="button">글쓰기</button>
+    <a href="${pageContext.request.contextPath}/contentWrite/Write" class="ui-button write-button">글쓰기</a>
+</div>
+
+<script src="${pageContext.request.contextPath}/resources/js/write.js"></script>
+
 </body>
 </html>

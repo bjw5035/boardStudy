@@ -1,5 +1,8 @@
 // 폼 유효성 검사 및 버튼 동작 스크립트
 
+/**
+ * 로그인 기능 스크립트
+ */
 // DOMContentLoaded 이벤트는 HTML 문서가 완전히 로드되고 DOM이 생성된 후 실행됩니다.
 document.addEventListener("DOMContentLoaded", function () {
   // 폼 요소를 가져옵니다.
@@ -19,7 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 회원가입 버튼을 선택합니다.
+  /**
+   * 회원가입
+   * 클릭 이벤트
+   * @type {Element}
+   */
+      // 회원가입 버튼을 선택합니다.
   const signupButton = document.querySelector(".signup-button");
 
   // 회원가입 버튼 클릭 이벤트를 처리합니다.
@@ -27,4 +35,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // 회원가입 페이지(Signup)로 이동
     window.location.href = "Signup"; // URL 경로 설정
   });
+
 });
