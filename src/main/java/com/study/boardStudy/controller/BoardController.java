@@ -28,13 +28,4 @@ public class BoardController {
         return "/board/Board";
     }
 
-    /**
-     * 글 작성 화면
-     */
-    @GetMapping(value = "/contentWrite/Write")
-    public String contentWrite() {
-        logger.info("contentWrite view");
-        return "/contentWrite/Write";
-    }
-
 }

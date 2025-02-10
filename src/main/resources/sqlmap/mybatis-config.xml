@@ -11,7 +11,7 @@
   <mappers>
     <mapper resource="sqlmap/mapper/UserMapper.xml" />
     <mapper resource="sqlmap/mapper/BoardMapper.xml" />
-    <mapper resource="sqlmap/mapper/ListModifyMapper.xml" />
+    <mapper resource="sqlmap/mapper/ContentModifyMapper.xml" />
   </mappers>
 
 </configuration>

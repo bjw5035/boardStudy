@@ -34,10 +34,9 @@
 
 <div class="button-group">
     <button class="ui-button write-button" id="write" name="btnWrite" type="button">글쓰기</button>
-    <a href="${pageContext.request.contextPath}/contentWrite/Write" class="ui-button write-button">글쓰기</a>
 </div>
 
-<script src="${pageContext.request.contextPath}/resources/js/write.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 
 </body>
 </html>

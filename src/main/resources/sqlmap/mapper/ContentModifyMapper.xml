@@ -6,13 +6,13 @@
 <mapper namespace="com.study.boardStudy.dao.admin.PostDAO">
 
   <!-- 게시물 등록	-->
-  <insert id="postInsert" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
+  <insert id="postInsert" parameterType="hashmap" useGeneratedKeys="true">
     <![CDATA[
-    INSERT INTO posts (ID, TITLE, CONTENT, AUTHOR)
-    VALUES (#{id}, #{title}, #{content}, #{author});
+    INSERT INTO content_post (TITLE, CONTENT)
+    VALUES (#{title}, #{content});
     ]]>
   </insert>
-  <update id="modifyInsert"></update>
+  <update id="contentInsert"/>
 
   <!-- 게시물 리스트 -->
 <!--  <select id="board_list" resultType="hashmap">-->

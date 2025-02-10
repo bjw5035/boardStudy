@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <td><label>
-                <input type="text" placeholder="제목을 입력하세요." name="title">
+                <input type="text" placeholder="제목을 입력하세요." name="title" id="title">
             </label></td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td><label>
-                <textarea placeholder="내용을 입력하세요." name="detail"></textarea>
+                <textarea placeholder="내용을 입력하세요." name="content" id="content"></textarea>
             </label></td>
         </tr>
         <tr>
@@ -79,6 +79,8 @@
         </tr>
     </table>
 </form>
+
+<script src="${pageContext.request.contextPath}/resources/js/write.js"></script>
 
 </body>
 </html>
