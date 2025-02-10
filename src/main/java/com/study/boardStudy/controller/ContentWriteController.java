@@ -5,7 +5,6 @@ import com.study.boardStudy.service.ContentWriteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -25,25 +24,29 @@ public class ContentWriteController {
      */
     @GetMapping(value = "/contentWrite/Write")
     public String contentView() {
-        logger.info("contentWrite view");
+        logger.info("contentWrite view <<<<<<<<<<<<<< 게시글 작성 화면");
         return "/contentWrite/Write";
     }
 
 
     @PostMapping(value = "/contentWrite/Write")
-    public void contentWrite(String title, String content, Model model) {
+    public String contentWrite(String title, String content) {
 
         ContentDTO contentDTO = new ContentDTO();
         contentDTO.setTitle(title);
         contentDTO.setContent(content);
-        contentWriteService.contentInsert(contentDTO);
 
-//        List<PostVO> postList = new ArrayList<>();
-//        postList.add(new PostVO("테스트1", "글쓰기 테스트1"));
-//        postList.add(new PostVO("테스트2", "글쓰기 테스트2"));
-//
-//        model.addAttribute("postList", postList);
-//        return model.toString();
+        logger.info("Controller contentWrite view : " + contentDTO);
+
+        boolean contentInsert = contentWriteService.contentInsert(contentDTO);
+        logger.info("Content insert : " + contentInsert);
+
+        if (!contentInsert) {
+            return "redirect:/contentWrite/Write";
+        }
+
+        return "redirect:/board/Board";
+
     }
 
 }

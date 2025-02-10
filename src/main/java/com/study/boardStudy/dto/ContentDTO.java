@@ -20,7 +20,7 @@ public class ContentDTO {
 
     @Override
     public String toString() {
-        return "PostVO{" +
+        return "ContentDTO{" +
             "title='" + title + '\'' +
             ", content='" + content + '\'' +
             '}';

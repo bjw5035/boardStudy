@@ -4,6 +4,6 @@ import com.study.boardStudy.dto.ContentDTO;
 
 public interface ContentWriteService {
 
-    void contentInsert(ContentDTO contentDTO);
+    boolean contentInsert(ContentDTO contentDTO);
 
 }

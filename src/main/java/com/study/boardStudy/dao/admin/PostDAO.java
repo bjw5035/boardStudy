@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PostDAO {
 
-    void postInsert(ContentDTO contentDTO);
+    int postInsert(ContentDTO contentDTO);
 }

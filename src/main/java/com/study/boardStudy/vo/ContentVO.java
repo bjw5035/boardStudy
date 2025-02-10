@@ -12,5 +12,4 @@ public class ContentVO {
         this.title = title;
         this.content = content;
     }
-
 }
