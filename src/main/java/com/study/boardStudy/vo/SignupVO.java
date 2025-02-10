@@ -1,4 +1,4 @@
-﻿package com.study.boardStudy.vo;
+package com.study.boardStudy.vo;
 
 import lombok.Getter;
 

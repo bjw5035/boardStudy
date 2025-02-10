@@ -76,6 +76,10 @@
         </tr>
         <tr>
             <td><input type="submit" value="등록" onclick="alert('작성완료')"></td>
+            <td>
+                <button class="ui-button move-button" id="btnMove" name="btnMove" type="button">목록
+                </button>
+            </td>
         </tr>
     </table>
 </form>

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContentWriteServiceImpl implements ContentWriteService {
 
-    private Logger logger = LoggerFactory.getLogger(ContentWriteServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(ContentWriteServiceImpl.class);
 
     @Autowired
     private PostDAO postDAO;
