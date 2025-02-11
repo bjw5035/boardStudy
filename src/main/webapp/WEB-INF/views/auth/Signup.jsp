@@ -4,7 +4,7 @@
     <title>회원가입</title>
 </head>
 <body>
-    <h2>회원가입</h2>
+<h2>회원가입</h2>
 <form action="" method="POST">
     <div>
         <p>
@@ -20,9 +20,10 @@
             <input type="text" id="joinName" name="joinName">
         </p>
         <button class="ui-button" id="join" name="btnJoin" type="submit">회원가입</button>
+        <button class="ui-button login_move" type="button">로그인 하기</button>
     </div>
 </form>
 
-<%--    <script type="text/javascript" src="/WEB-INF/js/user.js"></script>--%>
+<script src="${pageContext.request.contextPath}/resources/js/user.js"></script>
 </body>
 </html>

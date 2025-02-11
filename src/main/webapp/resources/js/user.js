@@ -36,4 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "Signup"; // URL 경로 설정
   });
 
+  /**
+   * 회원가입에서 로그인 화면 이동
+   */
+  const moveButtonLogin = document.querySelector(".login_move");
+  moveButtonLogin.addEventListener("click", function () {
+    window.location.href = "Login";
+  })
+
 });
