@@ -25,7 +25,8 @@
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
-            <td><a href="${pageContext.request.contextPath}/post/${post.id}">${post.title}</a></td>
+                <%--            <td><a href="${pageContext.request.contextPath}/post/${post.id}">${post.title}</a></td>--%>
+            <td>${post.title}</td>
             <td>${post.content}</td>
         </tr>
     </c:forEach>

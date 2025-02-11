@@ -13,11 +13,10 @@
     ]]>
   </insert>
 
-  <select id="contentSelect" resultType="com.study.boardStudy.dto.ContentDTO">
+  <select id="contentSelect" resultType="com.study.boardStudy.vo.ContentVO">
     <![CDATA[
-    select TITLE   AS 'title'
-         , CONTENT AS 'content'
-    from content_post;
+    SELECT *
+    FROM content_post;
     ]]>
   </select>
 
