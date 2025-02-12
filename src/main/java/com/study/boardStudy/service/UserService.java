@@ -4,8 +4,10 @@ import com.study.boardStudy.dto.SignupDTO;
 
 public interface UserService {
 
-    boolean join(SignupDTO signupDTO);
-
+    /* 로그인 */
     boolean login(String userId, String userPw);
+
+    /* 회원가입 */
+    boolean join(SignupDTO signupDTO);
 }
 

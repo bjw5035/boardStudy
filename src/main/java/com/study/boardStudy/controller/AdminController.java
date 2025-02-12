@@ -19,7 +19,7 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
-    
+
     /**
      * 로그인 페이지
      *
@@ -53,24 +53,26 @@ public class AdminController {
 
     }
 
-    /**
-     * 회원가입
-     *
-     * @return
-     * @throws Exception
-     */
     @GetMapping(value = "/auth/Signup")
     public String signUpGet() throws Exception {
+        logger.info("회원가입 페이지 입니다.");
         return "/auth/Signup";
     }
 
+    /**
+     * 회원가입 기능
+     *
+     * @param signupDTO
+     * @return
+     * @throws Exception
+     */
     @PostMapping(value = "/auth/Signup")
     public String signUpPost(SignupDTO signupDTO) throws Exception {
         boolean join = userService.join(signupDTO);
         if (join) {
             return "redirect:/auth/Login";
         } else {
-            return "/auth/Signup";
+            return "redirect:/auth/Signup";
         }
     }
 

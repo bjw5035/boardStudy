@@ -15,9 +15,18 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDAO userDAO;
-    
+
     @Override
     public boolean join(SignupDTO signupDTO) {
+
+        String joinId = signupDTO.getJoinId();
+        String joinPw = signupDTO.getJoinPw();
+
+        if (joinId == null || joinId.isEmpty() || joinPw == null || joinPw.isEmpty()) {
+            logger.error("join id or joinPw is empty");
+            return false;
+        }
+
         int result = userDAO.join(signupDTO);
         return result > 0;
     }
@@ -27,6 +36,10 @@ public class UserServiceImpl implements UserService {
 
         try {
 
+            // userId, userPw가 빈값이면 false
+            if (userId.isEmpty() || userPw.isEmpty()) {
+                throw new IllegalStateException("userId, userPw is empty");
+            }
             LoginDTO loginUser = userDAO.memberLogin(new LoginDTO(userId, userPw));
             logger.info("result : " + loginUser);
 
