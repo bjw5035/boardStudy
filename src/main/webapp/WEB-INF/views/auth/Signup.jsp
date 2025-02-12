@@ -20,7 +20,7 @@
             <input type="text" id="joinName" name="joinName">
         </p>
         <button class="ui-button" id="join" name="btnJoin" type="submit">회원가입</button>
-        <button class="ui-button login_move" type="button">로그인 하기</button>
+        <button class="ui-button login_move" type="button">로그인 이동</button>
     </div>
 </form>
 
