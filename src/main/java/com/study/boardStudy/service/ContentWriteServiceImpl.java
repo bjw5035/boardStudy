@@ -18,6 +18,10 @@ public class ContentWriteServiceImpl implements ContentWriteService {
     @Override
     public boolean contentInsert(ContentDTO contentDTO) {
 
+        if (contentDTO.getTitle() == null || contentDTO.getTitle().isEmpty() || contentDTO.getContent() == null || contentDTO.getContent().isEmpty()) {
+            throw new IllegalArgumentException("Title and content are required");
+        }
+
         int contentDto = postDAO.postInsert(contentDTO);
         logger.info("contentDto : " + contentDTO.toString());
 

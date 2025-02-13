@@ -5,6 +5,7 @@
     <title>Login</title>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles.css">
 </head>
 <body>
 <div class="container py-5">
@@ -21,16 +22,23 @@
                 <input type="text" class="form-control" id="userPw" placeholder="패스워드를 입력하세요."
                        name="userPw">
             </div>
-            <button class="btn btn-primary w-100" id="login" name="btnLogin" type="submit">로그인
-            </button>
-            <div class="mt-3 text-center">
+            <div class="btn-group">
+                <button type="submit" id="login" name="btnLogin" class="btn btn-primary w-100">로그인
+                </button>
                 <%-- TODO 2025-02-07 로그인 실패 시 alert 띄우기 --%>
-                <button class="ui-button signup-button" type="button">회원가입</button>
+                <button type="button" class="btn btn-secondary"
+                        onclick="location.href='Signup.jsp'">회원가입
+                </button>
+                <button type="button" class="btn btn-info"
+                        onclick="location.href='FindAccount.jsp'">아이디/비밀번호 찾기
+                </button>
             </div>
         </form>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/user.js"></script>
 </body>
 </html>
