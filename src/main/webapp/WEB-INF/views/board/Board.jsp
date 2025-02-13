@@ -10,24 +10,32 @@
 </head>
 <body class="container py-5">
 
+<!-- 계정 설정 버튼을 최상단 우측으로 이동 -->
+<div class="top-right">
+    <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="accountDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            👤 계정 설정
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+            <li><a class="dropdown-item" href="MyPage.jsp">🛠 마이페이지</a></li>
+            <li><a class="dropdown-item text-danger" href="Logout.jsp">🚪 로그아웃</a></li>
+        </ul>
+    </div>
+</div>
+
 <h1 class="text-center mb-4">게시판</h1>
 
-<!-- 제목 & 글쓰기 버튼을 같은 줄에 배치 -->
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <button class="btn btn-outline-dark write-button" id="write" name="btnWrite" type="button">📝
-        글쓰기
+<div class="search-bar-container">
+    <input type="text" id="searchBox" class="form-control search-box" placeholder="검색어 입력...">
+    <button class="btn btn-outline-primary search-button ms-2" id="searchButton" type="button">
+        🔍 검색
     </button>
-    <!-- 추가된 기능: 마이페이지 및 로그아웃 버튼 -->
-    <a href="MyPage.jsp" class="btn btn-outline-secondary me-2">👤 마이페이지</a>
-    <a href="/auth/Logout.jsp" class="btn btn-outline-danger">🚪 로그아웃</a>
+    <button class="btn btn-outline-dark write-button ms-2" id="write" name="btnWrite" type="button">
+        📝 글쓰기
+    </button>
 </div>
 
-<!-- 검색 기능 추가 -->
-<div class="mb-3">
-    <%--    <label for="searchBox"></label><input type="text" id="searchBox" class="form-control"--%>
-    <%--                                          placeholder="검색어 입력...">--%>
-    <input type="text" id="searchBox" class="form-control" placeholder="검색어 입력...">
-</div>
 
 <!-- 게시글이 없을 경우 메시지 출력 -->
 <c:if test="${empty postList}">

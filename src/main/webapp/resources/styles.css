@@ -1,4 +1,5 @@
-﻿body {
+﻿/* Board(게시판 메인)*/
+body {
   background-color: #f8f9fa;
 }
 
@@ -9,6 +10,40 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-right {
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  center: auto;
+  right: 18%;
+}
+
+.search-button {
+  height: 38px; /* 검색창과 동일한 높이 */
+  padding: 5px 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center; /* 텍스트와 아이콘을 한 줄에 정렬 */
+  justify-content: center;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.search-box {
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+.write-button {
+  margin-left: 5px;
 }
 
 .btn-outline-dark {
@@ -37,6 +72,8 @@
 .btn-custom:hover {
   background: linear-gradient(135deg, #2575fc, #6a11cb);
 }
+
+/*--------------------------------------------------------------*/
 
 /* 전체 폼 스타일 */
 .form-container {
@@ -101,4 +138,34 @@
 
 .signup-button:hover {
   background-color: #0056b3;
+}
+
+/* 글 작성 화면*/
+.write-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* 버튼을 양 끝에 배치 */
+}
+
+.btn-primary, .btn-secondary {
+  width: 48%; /* 버튼 크기 동일하게 맞춤 */
+  height: 45px; /* 버튼 높이 통일 */
+  font-size: 16px;
+  border-radius: 8px; /* 둥근 모서리 적용 */
+}
+
+label {
+  font-weight: bold; /* 라벨 강조 */
 }
