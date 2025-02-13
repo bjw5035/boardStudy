@@ -2,28 +2,31 @@
 <html>
 <head>
     <title>회원가입</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-<h2>회원가입</h2>
-<form action="" method="POST">
-    <div>
-        <p>
-            <label for="joinId">아이디 : </label>
-            <input type="text" id="joinId" name="joinId">
-        </p>
-        <p>
-            <label for="joinPw">패스워드 : </label>
-            <input type="text" id="joinPw" name="joinPw">
-        </p>
-        <p>
-            <label for="joinName">이름 : </label>
-            <input type="text" id="joinName" name="joinName">
-        </p>
-        <button class="ui-button" id="join" name="btnJoin" type="submit">회원가입</button>
+<body class="container py-5">
+<div class="card shadow p-4 mx-auto" style="width: 500px;">
+    <h2 class="text-center">회원가입</h2>
+    <form action="Signup.jsp" method="POST">
+        <div class="mb-3">
+            <label for="joinId" class="form-label">아이디 : </label>
+            <input type="text" class="form-control" id="joinId" name="joinId">
+        </div>
+        <div class="mb-3">
+            <label for="joinPw" class="form-label">패스워드 : </label>
+            <input type="text" class="form-control" id="joinPw" name="joinPw">
+        </div>
+        <div class="mb-3">
+            <label for="joinName" class="form-label">이름 : </label>
+            <input type="text" class="form-control" id="joinName" name="joinName">
+        </div>
+        <button class="btn btn-success w-100" type="submit">가입하기</button>
         <button class="ui-button login_move" type="button">로그인 이동</button>
-    </div>
-</form>
+    </form>
+</div>
 
 <script src="${pageContext.request.contextPath}/resources/js/user.js"></script>
+</bodycla>
 </body>
 </html>
