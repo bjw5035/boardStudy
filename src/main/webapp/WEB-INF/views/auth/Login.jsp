@@ -10,7 +10,7 @@
 <body>
 <div class="container py-5">
     <div class="card shadow p-4 mx-auto" style="max-width: 400px;">
-        <h2 class="text-centerd">Login</h2>
+        <h2 class="text-center">Login</h2>
         <form action="" method="POST">
             <div class="mb-3">
                 <label for="userId" class="form-label">아이디 : </label>
@@ -26,12 +26,8 @@
                 <button type="submit" id="login" name="btnLogin" class="btn btn-primary w-100">로그인
                 </button>
                 <%-- TODO 2025-02-07 로그인 실패 시 alert 띄우기 --%>
-                <button type="button" class="btn btn-secondary"
-                        onclick="location.href='Signup.jsp'">회원가입
-                </button>
-                <button type="button" class="btn btn-info"
-                        onclick="location.href='FindAccount.jsp'">아이디/비밀번호 찾기
-                </button>
+                <button type="button" class="btn btn-secondary signup-button">회원가입</button>
+                <button type="button" class="btn btn-info idPwMoveButton">아이디/비밀번호 찾기</button>
             </div>
         </form>
     </div>

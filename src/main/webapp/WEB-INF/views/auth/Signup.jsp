@@ -4,6 +4,7 @@
     <title>회원가입</title>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles.css">
 </head>
 <body class="container py-5">
 <div class="card shadow p-4 mx-auto" style="width: 500px;">
@@ -22,7 +23,7 @@
             <input type="text" class="form-control" id="joinName" name="joinName">
         </div>
         <button class="btn btn-success w-100" type="submit">가입하기</button>
-        <button class="ui-button login_move" type="button">로그인 이동</button>
+        <button class="btn btn-secondary login_move" type="button">로그인 이동</button>
     </form>
 </div>
 

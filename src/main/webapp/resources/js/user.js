@@ -48,4 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* 아이디/패스워드 화면 이동*/
+  const idPwMoveButton = document.querySelector(".idPwMoveButton");
+  if (idPwMoveButton) {
+    idPwMoveButton.addEventListener("click", function () {
+      window.location.href = "FindAccount";
+    })
+  }
+
 });
