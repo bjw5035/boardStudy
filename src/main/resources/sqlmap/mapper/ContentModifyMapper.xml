@@ -20,4 +20,20 @@
     ]]>
   </select>
 
+  <select id="findSelect" parameterType="string" resultType="com.study.boardStudy.vo.ContentVO">
+    <![CDATA[
+        SELECT *
+        FROM content_post
+    ]]>
+
+    <if test="title != null">
+      WHERE TITLE LIKE '%' || #{title} || '%'
+    </if>
+
+    <![CDATA[
+        ORDER BY SEQ DESC
+        ;
+    ]]>
+  </select>
+
 </mapper>

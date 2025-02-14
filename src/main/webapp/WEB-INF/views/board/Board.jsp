@@ -25,40 +25,32 @@
 </div>
 
 <h1 class="text-center mb-4">게시판</h1>
+<form action="board/Board/{searchBox}" method="post">
+    <div class="search-bar-container">
+        <label for="searchBox"></label><input type="text" id="searchBox" class="form-control search-box" placeholder="검색어 입력...">
+        <button class="btn btn-outline-primary search-button ms-2" id="searchButton" type="submit">🔍 검색</button>
+        <button class="btn btn-outline-dark write-button ms-2" id="write" name="btnWrite" type="button">📝 글쓰기</button>
+    </div>
+</form>
 
-<div class="search-bar-container">
-    <input type="text" id="searchBox" class="form-control search-box" placeholder="검색어 입력...">
-    <button class="btn btn-outline-primary search-button ms-2" id="searchButton" type="button">
-        🔍 검색
-    </button>
-    <button class="btn btn-outline-dark write-button ms-2" id="write" name="btnWrite" type="button">
-        📝 글쓰기
-    </button>
-</div>
-
-
-<!-- 게시글이 없을 경우 메시지 출력 -->
 <c:if test="${empty postList}">
     <p class="text-center text-danger">게시글이 없습니다.</p>
 </c:if>
 
-<!-- 게시글 리스트 (테이블 유지) -->
 <table class="table table-hover table-bordered">
     <thead class="table-dark">
     <tr>
+        <th>No.</th>
         <th>제목</th>
         <th>내용</th>
-        <%--        <th>작성자</th>--%>
-        <%--        <th>작성일</th>--%>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
+            <td>${post.seq}</td>
             <td>${post.title}</td>
             <td>${post.content}</td>
-                <%--            <td>${post.writer}</td>--%>
-                <%--            <td>${post.date}</td>--%>
         </tr>
     </c:forEach>
     </tbody>

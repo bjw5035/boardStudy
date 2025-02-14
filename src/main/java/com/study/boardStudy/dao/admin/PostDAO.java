@@ -13,4 +13,8 @@ public interface PostDAO {
 
     /* 게시글 리스트 */
     List<ContentVO> contentSelect(ContentDTO contentDTO);
+
+    /* 게시글 검색 기능*/
+    List<ContentVO> findSelect(String title);
+    
 }

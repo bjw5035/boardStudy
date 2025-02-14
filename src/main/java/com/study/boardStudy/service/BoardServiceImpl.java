@@ -25,4 +25,11 @@ public class BoardServiceImpl implements BoardService {
         return postDAO.contentSelect(contentDTO);
     }
 
+    @Override
+    public List<ContentVO> findSelect(String title) throws Exception {
+        List<ContentVO> findSelect = postDAO.findSelect(title);
+        logger.info("findSelect: {}", findSelect);
+        return findSelect;
+    }
+
 }
