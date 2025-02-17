@@ -20,7 +20,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="accountDropdown">
             <li><a class="dropdown-item" href="MyPage.jsp">🛠 마이페이지</a></li>
-            <li><a class="dropdown-item text-danger" href="Logout.jsp">🚪 로그아웃</a></li>
+            <li><a class="dropdown-item text-danger" href="${pageContext.request.contextPath}/auth/Logout.jsp">🚪 로그아웃</a></li>
         </ul>
     </div>
 </div>
