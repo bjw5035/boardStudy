@@ -10,5 +10,5 @@ public interface BoardService {
     List<ContentVO> contentSelect(ContentDTO contentDTO) throws Exception;
 
     /* 게시글 검색 기능*/
-    List<ContentVO> findSelect(String title) throws Exception;
+    List<ContentVO> findSelect(String searchBox) throws Exception;
 }

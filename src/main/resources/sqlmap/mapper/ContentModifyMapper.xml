@@ -25,11 +25,11 @@
         SELECT *
         FROM content_post
     ]]>
-
-    <if test="title != null">
-      WHERE TITLE LIKE '%' || #{title} || '%'
-    </if>
-
+    <where>
+      <if test="title != null and title != ''">
+        AND TITLE LIKE CONCAT('%',#{title},'%')
+      </if>
+    </where>
     <![CDATA[
         ORDER BY SEQ DESC
         ;

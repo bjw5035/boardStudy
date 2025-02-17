@@ -15,6 +15,6 @@ public interface PostDAO {
     List<ContentVO> contentSelect(ContentDTO contentDTO);
 
     /* 게시글 검색 기능*/
-    List<ContentVO> findSelect(String title);
-    
+    List<ContentVO> findSelect(String searchBox);
+
 }

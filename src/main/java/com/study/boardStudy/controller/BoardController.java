@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BoardController {
@@ -34,12 +34,16 @@ public class BoardController {
     /**
      * 게시판 검색 기능
      */
-    @GetMapping(value = "/{searchBox}")
-    public void findSelect(Model model, @PathVariable String searchBox) throws Exception {
-        //TODO 2025-02-14 mapping 에러 수정 필요(No mapping for POST /board/board/Board/%7BsearchBox%7D)
-//    public void findSelect(@RequestParam(value = "searchBox") String searchBox, Model model, @PathVariable String searchBox) throws Exception {
-        logger.info("search : {}", searchBox);
+    @GetMapping(value = "/Board/searchBox")
+    public String findSelect(@RequestParam(value = "searchBox", required = false) String searchBox, Model model) throws Exception {
+        if (searchBox == null || searchBox.isEmpty()) {
+            logger.info("search : {}", searchBox);
+            throw new IllegalStateException("Controller searchBox is null");
+        }
+
         List<ContentVO> select = boardService.findSelect(searchBox);
         model.addAttribute("postList", select);
+
+        return "/board/Board";
     }
 }

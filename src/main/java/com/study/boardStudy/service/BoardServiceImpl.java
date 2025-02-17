@@ -26,9 +26,15 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<ContentVO> findSelect(String title) throws Exception {
-        List<ContentVO> findSelect = postDAO.findSelect(title);
+    public List<ContentVO> findSelect(String searchBox) throws Exception {
+        if (searchBox == null || searchBox.isEmpty()) {
+            throw new IllegalArgumentException("ServiceImpl searchBox is null or empty");
+//            return postDAO.contentSelect(null);
+        }
+
+        List<ContentVO> findSelect = postDAO.findSelect(searchBox.trim());
         logger.info("findSelect: {}", findSelect);
+
         return findSelect;
     }
 

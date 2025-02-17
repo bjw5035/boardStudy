@@ -25,7 +25,6 @@
             <div class="btn-group">
                 <button type="submit" id="login" name="btnLogin" class="btn btn-primary w-100">로그인
                 </button>
-                <%-- TODO 2025-02-07 로그인 실패 시 alert 띄우기 --%>
                 <button type="button" class="btn btn-secondary signup-button">회원가입</button>
                 <button type="button" class="btn btn-info idPwMoveButton">아이디/비밀번호 찾기</button>
             </div>

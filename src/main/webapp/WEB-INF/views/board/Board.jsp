@@ -12,6 +12,7 @@
 
 <!-- 계정 설정 버튼을 최상단 우측으로 이동 -->
 <div class="top-right">
+    <%-- //TODO 2025-02-15 드롭다운 js 기능 구현--%>
     <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="accountDropdown"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,9 +26,10 @@
 </div>
 
 <h1 class="text-center mb-4">게시판</h1>
-<form action="board/Board/{searchBox}" method="post">
+<form action="${pageContext.request.contextPath}/Board/searchBox" method="get">
     <div class="search-bar-container">
-        <label for="searchBox"></label><input type="text" id="searchBox" class="form-control search-box" placeholder="검색어 입력...">
+        <label for="searchBox"></label>
+        <input type="text" id="searchBox" name="searchBox" class="form-control search-box" placeholder="검색어 입력...">
         <button class="btn btn-outline-primary search-button ms-2" id="searchButton" type="submit">🔍 검색</button>
         <button class="btn btn-outline-dark write-button ms-2" id="write" name="btnWrite" type="button">📝 글쓰기</button>
     </div>
