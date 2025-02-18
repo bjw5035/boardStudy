@@ -38,4 +38,10 @@ public class BoardServiceImpl implements BoardService {
         return findSelect;
     }
 
+    @Override
+    public boolean delContent(int seq) throws Exception {
+        return boardDAO.boardDelete(seq);
+    }
+
+
 }

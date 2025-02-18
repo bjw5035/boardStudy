@@ -21,7 +21,7 @@ public class BoardController {
     private BoardService boardService;
 
     /**
-     * 게시판 홈 화면
+     * 게시글 홈 화면
      */
     @GetMapping(value = "/board/Board")
     public void boardView(ContentDTO contentDTO, Model model) throws Exception {
@@ -32,7 +32,19 @@ public class BoardController {
     }
 
     /**
-     * 게시판 검색 기능
+     * 게시글 삭제
+     */
+    @GetMapping(value = "/Board/btnDel")
+    public String deleteContent(@RequestParam(value = "seq") int seq) throws Exception {
+        boolean delContent = boardService.delContent(seq);
+        if (!delContent) {
+            throw new Exception("del content fail");
+        }
+        return "redirect:/board/Board";
+    }
+
+    /**
+     * 게시글 검색 기능
      */
     @GetMapping(value = "/Board/searchBox")
     public String findSelect(@RequestParam(value = "searchBox", required = false) String searchBox, Model model) throws Exception {

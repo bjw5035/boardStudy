@@ -12,7 +12,6 @@
 
 <!-- 계정 설정 버튼을 최상단 우측으로 이동 -->
 <div class="top-right">
-    <%-- //TODO 2025-02-15 드롭다운 js 기능 구현--%>
     <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="accountDropdown"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,6 +41,7 @@
 <table class="table table-hover table-bordered">
     <thead class="table-dark">
     <tr>
+        <th><label><input type="checkbox"></label></th>
         <th>No.</th>
         <th>제목</th>
         <th>내용</th>
@@ -50,13 +50,21 @@
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
+                <%-- //TODO 2025-02-18 체크박스 체크여부 확인 스크립트 필요--%>
+                <%-- //TODO 2025-02-18 게시글 삭제여부 알럿 필요 --%>
+            <td><a href="${pageContext.request.contextPath}/Board/btnDel"> </a></td>
             <td>${post.seq}</td>
             <td>${post.title}</td>
             <td>${post.content}</td>
+            <td>
+                <form action="Board/btnDel" method="post" id=""></form>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+<button class="delete-button" name="btnDel" id="btnDel" data-post-id="${post.seq}">삭제</button>
+<%--<button type="submit" name="btnDelete" id="btnDelete" class="btn btn-outline-dark delete-button ms-2">삭제</button>--%>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

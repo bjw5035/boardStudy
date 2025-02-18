@@ -5,13 +5,12 @@
 
 <mapper namespace="com.study.boardStudy.dao.admin.BoardDAO">
 
-  <!-- 게시물 등록	-->
-  <insert id="boardInsert" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">
-    <![CDATA[
-    INSERT INTO webdb.posts (ID, TITLE, CONTENT, AUTHOR)
-    VALUES ( #{id} , #{title} , #{content} , #{author});
-    ]]>
-  </insert>
+  <!-- 게시글 삭제 -->
+  <delete id="boardDelete" parameterType="int">
+    DELETE
+    FROM CONTENT_POST
+    WHERE SEQ = '#{seq}';
+  </delete>
 
   <!-- 게시물 리스트 -->
 <!--  <select id="board_list" resultType="hashmap">-->
@@ -43,6 +42,4 @@
     ]]>
   </update>-->
 
-  <!-- <delete id="delete_account"> <![CDATA[ delete from userinfo where id
-    = #{id} ]]> </delete> -->
 </mapper>
