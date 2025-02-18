@@ -12,8 +12,8 @@
   // })
 
   // ------------------- jQuery 방법 -------------------
-  $('#write').click(function (event) {
-    event.preventDefault();
+  $('#write').click(function (e) {
+    e.preventDefault();
     window.location.href = '/contentWrite/Write';
   });
 
