@@ -57,13 +57,16 @@
             <td>${post.title}</td>
             <td>${post.content}</td>
             <td>
-                <form action="Board/btnDel" method="post" id=""></form>
+                <form action="Board/btnDel" method="post" id="deleteForm${post.seq}">
+                    <input type="hidden" name="seq" value="${post.seq}">
+                    <button type="button" onclick="confirmDelete(${post.seq})">삭제</button>
+                </form>
             </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<button class="delete-button" name="btnDel" id="btnDel" data-post-id="${post.seq}">삭제</button>
+<%--<button class="delete-button" name="btnDel" id="btnDel" data-post-id="${post.seq}">삭제</button>--%>
 <%--<button type="submit" name="btnDelete" id="btnDelete" class="btn btn-outline-dark delete-button ms-2">삭제</button>--%>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
