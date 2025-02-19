@@ -10,8 +10,10 @@ import lombok.Setter;
 @Getter
 public class LoginDTO {
 
+    private int seq;
     private String userId;
     private String userPw;
+    private String userName;
 
     public LoginDTO(String userId, String userPw) {
         if (userId == null || userId.isEmpty()) {
@@ -27,11 +29,20 @@ public class LoginDTO {
     public LoginDTO() {
     }
 
+    public LoginDTO(int seq, String userId, String userPw, String userName) {
+        this.seq = seq;
+        this.userId = userId;
+        this.userPw = userPw;
+        this.userName = userName;
+    }
+
     @Override
     public String toString() {
-        return "UserVO{" +
-            "userId='" + userId + '\'' +
+        return "LoginDTO{" +
+            "seq=" + seq +
+            ", userId='" + userId + '\'' +
             ", userPw='" + userPw + '\'' +
+            ", userName='" + userName + '\'' +
             '}';
     }
 }

@@ -2,6 +2,7 @@ package com.study.boardStudy.dao.admin;
 
 import com.study.boardStudy.dto.LoginDTO;
 import com.study.boardStudy.dto.SignupDTO;
+import com.study.boardStudy.vo.LoginVO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -12,5 +13,5 @@ public interface UserDAO {
 
     int join(SignupDTO signupDTO);
 
-    LoginDTO memberLogin(LoginDTO loginDTO);
+    LoginVO memberLogin(LoginDTO loginDTO);
 }

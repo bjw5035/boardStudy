@@ -26,14 +26,12 @@
   <!-- 로그인 -->
   <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
   <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
-  <select id="memberLogin" parameterType="com.study.boardStudy.dto.LoginDTO" resultType="com.study.boardStudy.dto.LoginDTO">
+  <select id="memberLogin" parameterType="com.study.boardStudy.dto.LoginDTO" resultType="com.study.boardStudy.vo.LoginVO">
 		<![CDATA[
-    SELECT id AS userId,
-           pw AS userPw
-    FROM members
+    SELECT *
+    FROM MEMBERS
     WHERE id = #{userId}
         AND pw = #{userPw};
-
     ]]>
 	</select>
 

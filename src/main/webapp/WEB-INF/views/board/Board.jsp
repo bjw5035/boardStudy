@@ -12,6 +12,7 @@
     <script defer src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 </head>
 <body class="container-fluid py-5">
+<span>${post.userId} 환영합니다!</span>
 
 <!-- 계정 설정 드롭다운 -->
 <div class="d-flex justify-content-end">
