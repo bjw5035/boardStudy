@@ -43,5 +43,18 @@ public class BoardServiceImpl implements BoardService {
         return boardDAO.boardDelete(seq);
     }
 
+    @Override
+    public ContentVO findOneContent(int seq) throws Exception {
+
+        if (seq < 1) {
+            throw new IllegalArgumentException("ServiceImpl searchBox is null or empty");
+        }
+
+        ContentVO oneSelect = boardDAO.findOneSelect(seq);
+        logger.info("findOneSelect: {}", oneSelect.getSeq());
+
+        return oneSelect;
+    }
+
 
 }

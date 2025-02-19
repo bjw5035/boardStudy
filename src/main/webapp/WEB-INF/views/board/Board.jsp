@@ -1,17 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
     <title>게시판</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles.css">
+    <script defer src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 </head>
-<body class="container py-5">
+<body class="container-fluid py-5">
 
-<!-- 계정 설정 버튼을 최상단 우측으로 이동 -->
-<div class="top-right">
+<!-- 계정 설정 드롭다운 -->
+<div class="d-flex justify-content-end">
     <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="accountDropdown"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,53 +25,52 @@
     </div>
 </div>
 
-<h1 class="text-center mb-4">게시판</h1>
-<form action="${pageContext.request.contextPath}/Board/searchBox" method="get">
-    <div class="search-bar-container">
-        <label for="searchBox"></label>
-        <input type="text" id="searchBox" name="searchBox" class="form-control search-box" placeholder="검색어 입력...">
-        <button class="btn btn-outline-primary search-button ms-2" id="searchButton" type="submit">🔍 검색</button>
-        <button class="btn btn-outline-dark write-button ms-2" id="write" name="btnWrite" type="button">📝 글쓰기</button>
-    </div>
-</form>
+<!-- 검색 및 글쓰기 버튼 -->
+<div class="d-flex justify-content-between my-3">
+    <form action="${pageContext.request.contextPath}/Board/searchBox" method="get" class="d-flex">
+        <label>
+            <input type="text" name="searchBox" class="form-control me-2" placeholder="검색어 입력" required>
+        </label>
+        <button type="submit" class="btn btn-primary">🔍 검색</button>
+    </form>
+    <%--    <button class="btn btn-success write-button" id="write" name="btnWrite">📝 글쓰기</button>--%>
+    <button class="btn btn-success write-button ms-2" id="write" name="btnWrite">📝 글쓰기</button>
+</div>
 
-<c:if test="${empty postList}">
-    <p class="text-center text-danger">게시글이 없습니다.</p>
-</c:if>
-
-<table class="table table-hover table-bordered">
+<!-- 게시글 리스트 -->
+<table class=" table table-hover
+    ">
     <thead class="table-dark">
     <tr>
-        <th><label><input type="checkbox"></label></th>
-        <th>No.</th>
+        <th>번호</th>
         <th>제목</th>
         <th>내용</th>
+        <%--        <th>작성자</th>--%>
+        <th>작성일</th>
+        <%--        <th>관리</th>--%>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
-                <%-- //TODO 2025-02-18 체크박스 체크여부 확인 스크립트 필요--%>
-                <%-- //TODO 2025-02-18 게시글 삭제여부 알럿 필요 --%>
-            <td><a href="${pageContext.request.contextPath}/Board/btnDel"> </a></td>
             <td>${post.seq}</td>
-            <td>${post.title}</td>
+            <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
+                <%--            <td>${post.userId}</td>--%>
             <td>${post.content}</td>
-            <td>
-                <form action="Board/btnDel" method="post" id="deleteForm${post.seq}">
-                    <input type="hidden" name="seq" value="${post.seq}">
-                    <button type="button" onclick="confirmDelete(${post.seq})">삭제</button>
-                </form>
-            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<%--<button class="delete-button" name="btnDel" id="btnDel" data-post-id="${post.seq}">삭제</button>--%>
-<%--<button type="submit" name="btnDelete" id="btnDelete" class="btn btn-outline-dark delete-button ms-2">삭제</button>--%>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/board.js"></script>
+<!-- 페이지네이션 -->
+<div class="d-flex justify-content-center">
+    <c:if test="${currentPage > 1}">
+        <a href="?page=${currentPage - 1}" class="btn btn-outline-primary me-2">⬅ 이전</a>
+    </c:if>
+    <c:if test="${currentPage < totalPages}">
+        <a href="?page=${currentPage + 1}" class="btn btn-outline-primary">다음 ➡</a>
+    </c:if>
+</div>
+
 </body>
 </html>

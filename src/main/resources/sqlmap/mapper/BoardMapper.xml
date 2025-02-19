@@ -12,25 +12,11 @@
     WHERE SEQ = '#{seq}';
   </delete>
 
-  <!-- 게시물 리스트 -->
-<!--  <select id="board_list" resultType="hashmap">-->
-<!--		<![CDATA[-->
-<!--    INSERT INTO webdb.board-->
-<!--    (-->
-<!--      BOARD_NO,-->
-<!--      TITLE,-->
-<!--      CONTENTS,-->
-<!--      CREATE_TIME-->
-<!--    )-->
-<!--    VALUES-->
-<!--      (-->
-<!--        #{board_no},-->
-<!--        #{title},-->
-<!--        #{contents},-->
-<!--        #{create_time}-->
-<!--      )-->
-<!--    ]]>-->
-<!--	</select>-->
+  <select id="findOneSelect" parameterType="int" resultType="com.study.boardStudy.vo.ContentVO">
+    SELECT *
+    FROM CONTENT_POST
+    WHERE SEQ = #{seq};
+  </select>
 
   <!-- 마이페이지 수정 -->
   <!--<update id="update_myModify">

@@ -14,4 +14,7 @@ public interface BoardService {
 
     /* 게시글 삭제 */
     boolean delContent(int seq) throws Exception;
+
+    /* 게시글 상세 조회 */
+    ContentVO findOneContent(int seq) throws Exception;
 }

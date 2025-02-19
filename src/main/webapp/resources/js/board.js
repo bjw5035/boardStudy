@@ -39,10 +39,4 @@
     })
   })
 
-  const confirmDelete = (postSeq) => {
-    if (confirm("test")) {
-      document.getElementById("confirmDelete" + postSeq).submit();
-    }
-  }
-
 })

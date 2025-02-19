@@ -58,4 +58,18 @@ public class BoardController {
 
         return "/board/Board";
     }
+
+    /**
+     * 게시글 상세 조회
+     */
+    @GetMapping(value = "/Board/Detail")
+    public String boardDetail(@RequestParam(value = "seq") int seq, Model model) throws Exception {
+        ContentVO oneContent = boardService.findOneContent(seq);
+        if (oneContent == null || oneContent.getSeq() != seq || oneContent.getSeq() == 0) {
+            throw new Exception("board detail fail");
+        }
+        model.addAttribute("post", oneContent);
+        
+        return "board/Detail";
+    }
 }
