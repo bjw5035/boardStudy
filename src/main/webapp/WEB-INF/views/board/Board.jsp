@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles.css">
     <script defer src="${pageContext.request.contextPath}/resources/js/board.js"></script>
@@ -33,7 +35,6 @@
         </label>
         <button type="submit" class="btn btn-primary">🔍 검색</button>
     </form>
-    <%--    <button class="btn btn-success write-button" id="write" name="btnWrite">📝 글쓰기</button>--%>
     <button class="btn btn-success write-button ms-2" id="write" name="btnWrite">📝 글쓰기</button>
 </div>
 
@@ -45,8 +46,8 @@
         <th>번호</th>
         <th>제목</th>
         <th>내용</th>
-        <%--        <th>작성자</th>--%>
-        <th>작성일</th>
+        <th>작성자</th>
+        <%--        <th>작성일</th>--%>
         <%--        <th>관리</th>--%>
     </tr>
     </thead>
@@ -55,7 +56,7 @@
         <tr>
             <td>${post.seq}</td>
             <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
-                <%--            <td>${post.userId}</td>--%>
+            <td>${post.userId}</td>
             <td>${post.content}</td>
         </tr>
     </c:forEach>

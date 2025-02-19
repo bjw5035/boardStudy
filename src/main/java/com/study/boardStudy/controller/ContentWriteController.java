@@ -26,7 +26,13 @@ public class ContentWriteController {
         return "/contentWrite/Write";
     }
 
-
+    /**
+     * 게시글 작성
+     *
+     * @param title
+     * @param content
+     * @return
+     */
     @PostMapping(value = "/contentWrite/Write")
     public String contentWrite(String title, String content) {
 

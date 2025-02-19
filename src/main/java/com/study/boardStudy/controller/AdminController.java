@@ -41,11 +41,13 @@ public class AdminController {
      * @throws Exception
      */
     @PostMapping(value = "/auth/Login")
-    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw) throws Exception {
+    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpServletRequest request) throws Exception {
 
         boolean login = userService.login(userId, userPw);
 
         if (login) {
+            HttpSession session = request.getSession();
+            session.setAttribute("userId", userId);
             return "redirect:/board/Board";
         } else {
             return "redirect:/auth/Login";
