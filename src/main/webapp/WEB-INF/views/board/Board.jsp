@@ -34,7 +34,7 @@
         <label>
             <input type="text" name="searchBox" class="form-control me-2" placeholder="검색어 입력" required>
         </label>
-        <button type="submit" class="btn btn-primary">🔍 검색</button>
+        <button type="submit" class="btn btn-board-primary">🔍 검색</button>
     </form>
     <button class="btn btn-success write-button ms-2" id="write" name="btnWrite">📝 글쓰기</button>
 </div>
@@ -48,8 +48,7 @@
         <th>제목</th>
         <th>내용</th>
         <th>작성자</th>
-        <%--        <th>작성일</th>--%>
-        <%--        <th>관리</th>--%>
+        <th>작성일</th>
     </tr>
     </thead>
     <tbody>
@@ -57,8 +56,9 @@
         <tr>
             <td>${post.seq}</td>
             <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
-            <td>${post.userId}</td>
             <td>${post.content}</td>
+            <td>${post.userId}</td>
+            <td>${post.createAt}</td>
         </tr>
     </c:forEach>
     </tbody>

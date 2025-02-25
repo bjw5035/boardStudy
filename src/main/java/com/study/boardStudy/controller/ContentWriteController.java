@@ -2,10 +2,13 @@ package com.study.boardStudy.controller;
 
 import com.study.boardStudy.dto.ContentDTO;
 import com.study.boardStudy.service.ContentWriteService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,8 +24,18 @@ public class ContentWriteController {
      * 글 작성 화면
      */
     @GetMapping(value = "/contentWrite/Write")
-    public String contentView() {
+    public String contentView(HttpServletRequest request, Model model) {
         logger.info("contentWrite view <<<<<<<<<<<<<< 게시글 작성 화면");
+
+        HttpSession session = request.getSession();
+        String userId = (String) session.getAttribute("userId");
+
+        if (userId == null) {
+            return "redirect:/auth/login";
+        }
+
+        model.addAttribute("userId", userId);
+
         return "/contentWrite/Write";
     }
 
@@ -31,15 +44,19 @@ public class ContentWriteController {
      *
      * @param title
      * @param content
+     * @param request
      * @return
      */
     @PostMapping(value = "/contentWrite/Write")
-    public String contentWrite(String title, String content) {
+    public String contentWrite(String title, String content, HttpServletRequest request) {
+
+        HttpSession session = request.getSession();
+        String userId = (String) session.getAttribute("userId");
 
         ContentDTO contentDTO = new ContentDTO();
         contentDTO.setTitle(title);
         contentDTO.setContent(content);
-
+        contentDTO.setName(userId);
         logger.info("Controller contentWrite view : {}", contentDTO);
 
         boolean contentInsert = contentWriteService.contentInsert(contentDTO);

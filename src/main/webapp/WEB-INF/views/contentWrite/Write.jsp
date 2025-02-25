@@ -21,6 +21,10 @@
             <textarea class="form-control" id="content" name="content" rows="6"
                       placeholder="내용을 입력하세요"></textarea>
         </div>
+        <div class="mb-3">
+            <label for="${post.userId}" class="form-label">작성자 : </label>
+            <input type="text" class="form-control" name="userId" value="${post.userId}" readonly>
+        </div>
         <div class="button-group">
             <input type="submit" class="btn btn-primary" value="게시글 작성" onclick="alert('작성 완료!')">
             <button class="btn btn-secondary" id="btnMove" name="btnMove" type="button">목록</button>

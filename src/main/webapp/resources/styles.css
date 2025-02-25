@@ -9,7 +9,14 @@ body {
 
 .form-control {
   margin-bottom: 15px;
-  width: 300px;
+  /*width: 550px;*/
+  width: 100%;
+}
+
+.btn-board-primary {
+  margin-bottom: 15px;
+  width: 100px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .board-container {

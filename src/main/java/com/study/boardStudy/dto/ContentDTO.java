@@ -10,7 +10,7 @@ public class ContentDTO {
     private int seq;
     private String title;
     private String content;
-//    private String name;
+    private String name;
 
     public ContentDTO() {
     }
@@ -30,11 +30,20 @@ public class ContentDTO {
         this.content = content;
     }
 
+    public ContentDTO(int seq, String title, String content, String name) {
+        this.seq = seq;
+        this.title = title;
+        this.content = content;
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "ContentDTO{" +
-            "title='" + title + '\'' +
+            "seq=" + seq +
+            ", title='" + title + '\'' +
             ", content='" + content + '\'' +
+            ", name='" + name + '\'' +
             '}';
     }
 }

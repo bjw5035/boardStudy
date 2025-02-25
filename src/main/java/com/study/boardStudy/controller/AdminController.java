@@ -49,9 +49,11 @@ public class AdminController {
         if (!login.getUserId().isEmpty() || login.getUserName() != null && !login.getUserName().isEmpty()) {
             String userId = login.getUserId();
             String userName = login.getUserName();
+
             HttpSession session = request.getSession();
             session.setAttribute("userId", userId);
             session.setAttribute("userName", userName);
+
             return "redirect:/board/Board";
         } else {
             return "redirect:/auth/Login";
