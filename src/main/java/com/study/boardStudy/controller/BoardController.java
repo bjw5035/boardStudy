@@ -4,6 +4,7 @@ import com.study.boardStudy.dto.ContentDTO;
 import com.study.boardStudy.service.BoardService;
 import com.study.boardStudy.vo.ContentVO;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,11 @@ public class BoardController {
      * 게시글 홈 화면
      */
     @GetMapping(value = "/board/Board")
-    public void boardView(ContentDTO contentDTO, Model model) throws Exception {
+    public void boardView(ContentDTO contentDTO, Model model, HttpServletRequest request) throws Exception {
         logger.info("board view <<<<< 게시판 홈 화면");
+//        HttpSession session = request.getSession();
 
-        List list = boardService.contentSelect(contentDTO);
+        List<ContentVO> list = boardService.contentSelect(contentDTO);
         model.addAttribute("postList", list);
     }
 
@@ -69,7 +71,7 @@ public class BoardController {
             throw new Exception("board detail fail");
         }
         model.addAttribute("post", oneContent);
-        
+
         return "board/Detail";
     }
 }

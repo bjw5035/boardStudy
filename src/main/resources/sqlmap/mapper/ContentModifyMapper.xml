@@ -15,8 +15,14 @@
 
   <select id="contentSelect" resultType="com.study.boardStudy.vo.ContentVO">
     <![CDATA[
-    SELECT *
-    FROM content_post;
+    SELECT M.ID      AS USERID,
+           P.SEQ     AS SEQ,
+           P.TITLE   AS TITLE,
+           P.CONTENT AS CONTENT
+    FROM MEMBERS M
+           INNER JOIN CONTENT_POST P
+                      ON M.SEQ = P.MEMBER_SEQ
+    WHERE M.ID = #{userId};
     ]]>
   </select>
 
