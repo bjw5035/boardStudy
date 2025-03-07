@@ -9,13 +9,14 @@ public class ContentVO {
     private final String title;
     private final String content;
     private final String userId;
-    private final int createAt;
+    private final String userName;
 
-    public ContentVO(int seq, String title, String content, String userId, int createAt) {
+    public ContentVO(int seq, String title, String content, String userId, String userName) {
         this.seq = seq;
         this.title = title;
         this.content = content;
         this.userId = userId;
-        this.createAt = createAt;
+        this.userName = userName;
     }
+
 }

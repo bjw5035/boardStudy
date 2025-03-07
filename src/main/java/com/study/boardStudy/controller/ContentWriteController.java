@@ -56,7 +56,7 @@ public class ContentWriteController {
         ContentDTO contentDTO = new ContentDTO();
         contentDTO.setTitle(title);
         contentDTO.setContent(content);
-        contentDTO.setName(userId);
+        contentDTO.setUserName(userId);
         logger.info("Controller contentWrite view : {}", contentDTO);
 
         boolean contentInsert = contentWriteService.contentInsert(contentDTO);

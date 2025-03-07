@@ -12,7 +12,7 @@
     <script defer src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 </head>
 <body class="container-fluid py-5">
-<span>${post.userId} 환영합니다!</span>
+<span>${post.userName} 환영합니다!</span>
 
 <!-- 계정 설정 드롭다운 -->
 <div class="d-flex justify-content-end">
@@ -58,7 +58,8 @@
             <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
             <td>${post.content}</td>
             <td>${post.userId}</td>
-            <td>${post.createAt}</td>
+            <td>${post.userName}</td>
+                <%--            <td>${post.createAt}</td>--%>
         </tr>
     </c:forEach>
     </tbody>

@@ -10,7 +10,8 @@ public class ContentDTO {
     private int seq;
     private String title;
     private String content;
-    private String name;
+    private String userId;
+    private String userName;
 
     public ContentDTO() {
     }
@@ -30,11 +31,19 @@ public class ContentDTO {
         this.content = content;
     }
 
-    public ContentDTO(int seq, String title, String content, String name) {
+    public ContentDTO(int seq, String title, String content, String username) {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.name = name;
+        this.userName = username;
+    }
+
+    public ContentDTO(int seq, String title, String content, String userId, String username) {
+        this.seq = seq;
+        this.title = title;
+        this.content = content;
+        this.userName = username;
+        this.userId = userId;
     }
 
     @Override
@@ -43,7 +52,8 @@ public class ContentDTO {
             "seq=" + seq +
             ", title='" + title + '\'' +
             ", content='" + content + '\'' +
-            ", name='" + name + '\'' +
+            ", username='" + userName + '\'' +
+            ", userId='" + userId + '\'' +
             '}';
     }
 }

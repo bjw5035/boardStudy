@@ -13,19 +13,21 @@
     ]]>
   </insert>
 
+  <!-- 게시물 출력 -->
   <select id="contentSelect" resultType="com.study.boardStudy.vo.ContentVO">
     <![CDATA[
-    SELECT M.ID      AS USERID,
-           P.SEQ     AS SEQ,
+    SELECT P.SEQ     AS SEQ,
            P.TITLE   AS TITLE,
-           P.CONTENT AS CONTENT
+           P.CONTENT AS CONTENT,
+           M.ID      AS USERID,
+           M.NAME    AS USERNAME
     FROM MEMBERS M
            INNER JOIN CONTENT_POST P
-                      ON M.SEQ = P.MEMBER_SEQ
-    WHERE M.ID = #{userId};
+                      ON M.SEQ = P.MEMBER_SEQ;
     ]]>
   </select>
 
+  <!-- 게시물 검색 -->
   <select id="findSelect" parameterType="string" resultType="com.study.boardStudy.vo.ContentVO">
     <![CDATA[
         SELECT *
