@@ -27,9 +27,6 @@ public class BoardController {
     @GetMapping(value = "/board/Board")
     public void boardView(ContentDTO contentDTO, Model model, HttpServletRequest request) throws Exception {
         logger.info("board view <<<<< 게시판 홈 화면");
-//        HttpSession session = request.getSession();
-//        session.setAttribute("userName", contentDTO.getUserName());
-        logger.info("contentDTO userName : {}", contentDTO.getUserName());
 
         List<ContentVO> list = boardService.contentSelect(contentDTO);
         model.addAttribute("postList", list);
