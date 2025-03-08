@@ -42,8 +42,7 @@
 </div>
 
 <!-- 게시글 리스트 -->
-<table class=" table table-hover
-    ">
+<table class="table table-hover">
     <thead class="table-dark">
     <tr>
         <th>번호</th>

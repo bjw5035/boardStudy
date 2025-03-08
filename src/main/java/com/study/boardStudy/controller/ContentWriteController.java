@@ -29,6 +29,7 @@ public class ContentWriteController {
 
         HttpSession session = request.getSession();
         String userId = (String) session.getAttribute("userId");
+        logger.info("userId = " + userId);
 
         if (userId == null) {
             return "redirect:/auth/login";

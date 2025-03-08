@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,12 +19,13 @@
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">내용</label>
-            <textarea class="form-control" id="content" name="content" rows="6"
-                      placeholder="내용을 입력하세요"></textarea>
+            <textarea class="form-control" id="content" name="content" rows="6" placeholder="내용을 입력하세요"></textarea>
         </div>
         <div class="mb-3">
-            <label for="${post.userId}" class="form-label">작성자 : </label>
-            <input type="text" class="form-control" name="userId" value="${post.userId}" readonly>
+            <label class="form-label">작성자 : </label>
+            <label>
+                <input type="text" class="form-control" name="userId" value="${userId}" readonly>
+            </label>
         </div>
         <div class="button-group">
             <input type="submit" class="btn btn-primary" value="게시글 작성" onclick="alert('작성 완료!')">
