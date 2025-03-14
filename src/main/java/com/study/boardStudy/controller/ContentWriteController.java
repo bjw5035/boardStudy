@@ -54,12 +54,12 @@ public class ContentWriteController {
     public String contentWrite(String title, String content, HttpServletRequest request) {
 
         HttpSession session = request.getSession();
-        String userId = (String) session.getAttribute("userId");
+        String userName = (String) session.getAttribute("userName");
 
         ContentDTO contentDTO = new ContentDTO();
         contentDTO.setTitle(title);
         contentDTO.setContent(content);
-        contentDTO.setUserName(userId);
+        contentDTO.setUserName(userName);
         logger.info("Controller contentWrite view : {}", contentDTO);
 
         boolean contentInsert = contentWriteService.contentInsert(contentDTO);
