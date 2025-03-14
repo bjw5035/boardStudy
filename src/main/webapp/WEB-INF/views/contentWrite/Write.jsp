@@ -24,7 +24,7 @@
         <div class="mb-3">
             <label class="form-label">작성자 : </label>
             <label>
-                <input type="text" class="form-control" name="userId" value="${userId}" readonly>
+                <input type="text" class="form-control" name="userName" value="${userName}" readonly>
             </label>
         </div>
         <div class="button-group">

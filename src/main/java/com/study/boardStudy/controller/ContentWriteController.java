@@ -29,10 +29,12 @@ public class ContentWriteController {
 
         HttpSession session = request.getSession();
         String userId = (String) session.getAttribute("userId");
-        logger.info("userId = " + userId);
+        String userName = (String) session.getAttribute("userName");
+        logger.info("userId = {}", userId);
+        logger.info("userId = {}", userName);
 
-        if (userId == null) {
-            return "redirect:/auth/login";
+        if (userId == null || userId.isEmpty()) {
+            return "redirect:/auth/Login";
         }
 
         model.addAttribute("userId", userId);

@@ -41,9 +41,7 @@ public class AdminController {
      */
     @PostMapping(value = "/auth/Login")
     public String login(LoginDTO loginDTO, HttpServletRequest request) throws Exception {
-//    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpServletRequest request) throws Exception {
 
-//        boolean login = userService.login(userId, userPw);
         LoginVO login = userService.login(loginDTO);
 
         if (!login.getUserId().isEmpty() || login.getUserName() != null && !login.getUserName().isEmpty()) {
