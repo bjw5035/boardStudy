@@ -8,8 +8,8 @@
   <!-- 게시물 등록	-->
   <insert id="postInsert" parameterType="com.study.boardStudy.dto.ContentDTO">
     <![CDATA[
-    INSERT INTO content_post (TITLE, CONTENT)
-    VALUES (#{title}, #{content});
+    INSERT INTO content_post (TITLE, CONTENT, MEMBER_NAME)
+    VALUES (#{title}, #{content}, #{userName});
     ]]>
   </insert>
 

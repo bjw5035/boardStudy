@@ -23,7 +23,7 @@ public class ContentWriteServiceImpl implements ContentWriteService {
         }
 
         int contentDto = postDAO.postInsert(contentDTO);
-        logger.info("contentDto : " + contentDTO.toString());
+        logger.info("contentDto : {}", contentDTO.toString());
 
         if (contentDto == 0) {
             throw new IllegalStateException("content insert failed");
