@@ -20,7 +20,8 @@
            P.TITLE   AS TITLE,
            P.CONTENT AS CONTENT,
            M.ID      AS USERID,
-           M.NAME    AS USERNAME
+           M.NAME    AS USERNAME,
+           p.CREATED_AT AS CREATETIME
     FROM MEMBERS M
            INNER JOIN CONTENT_POST P
                       ON M.SEQ = P.MEMBER_SEQ;

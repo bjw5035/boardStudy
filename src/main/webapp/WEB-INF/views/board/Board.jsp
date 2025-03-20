@@ -58,9 +58,8 @@
             <td>${post.seq}</td>
             <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
             <td>${post.content}</td>
-            <td>${post.userId}</td>
             <td>${post.userName}</td>
-                <%--            <td>${post.createAt}</td>--%>
+            <td>${post.createTime}</td>
         </tr>
     </c:forEach>
     </tbody>

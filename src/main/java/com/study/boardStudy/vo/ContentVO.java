@@ -10,13 +10,15 @@ public class ContentVO {
     private final String content;
     private final String userId;
     private final String userName;
+    private final String createTime;
 
-    public ContentVO(int seq, String title, String content, String userId, String userName) {
+    public ContentVO(int seq, String title, String content, String userId, String userName, String createTime) {
         this.seq = seq;
         this.title = title;
         this.content = content;
         this.userId = userId;
         this.userName = userName;
+        this.createTime = createTime;
     }
 
 }

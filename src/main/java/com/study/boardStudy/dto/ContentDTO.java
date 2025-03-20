@@ -12,6 +12,7 @@ public class ContentDTO {
     private String content;
     private String userId;
     private String userName;
+    private String createTime;
 
     public ContentDTO() {
     }
@@ -46,14 +47,24 @@ public class ContentDTO {
         this.userId = userId;
     }
 
+    public ContentDTO(int seq, String title, String content, String userId, String username, String createTime) {
+        this.seq = seq;
+        this.title = title;
+        this.content = content;
+        this.userName = username;
+        this.userId = userId;
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "ContentDTO{" +
             "seq=" + seq +
             ", title='" + title + '\'' +
             ", content='" + content + '\'' +
-            ", username='" + userName + '\'' +
             ", userId='" + userId + '\'' +
+            ", userName='" + userName + '\'' +
+            ", createTime=" + createTime +
             '}';
     }
 }
