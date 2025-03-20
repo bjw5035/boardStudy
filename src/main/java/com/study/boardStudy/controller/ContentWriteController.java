@@ -1,7 +1,10 @@
 package com.study.boardStudy.controller;
 
 import com.study.boardStudy.dto.ContentDTO;
+import com.study.boardStudy.service.BoardService;
 import com.study.boardStudy.service.ContentWriteService;
+import com.study.boardStudy.vo.ContentVO;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -20,6 +23,9 @@ public class ContentWriteController {
     @Autowired
     private ContentWriteService contentWriteService;
 
+    @Autowired
+    private BoardService boardService;
+
     /**
      * 글 작성 화면
      */
@@ -30,11 +36,23 @@ public class ContentWriteController {
         HttpSession session = request.getSession();
         String userId = (String) session.getAttribute("userId");
         String userName = (String) session.getAttribute("userName");
-        logger.info("userId = {}", userId);
+
         logger.info("userId = {}", userName);
 
         if (userId == null || userId.isEmpty()) {
             return "redirect:/auth/Login";
+        }
+
+        ContentDTO contentDTO = new ContentDTO();
+        contentDTO.setUserId(userId);
+
+        try {
+            List<ContentVO> contentSelect = boardService.contentSelect(contentDTO);
+            if (!contentSelect.isEmpty()) {
+                model.addAttribute("createTime", contentSelect.get(0).getCreateTime());
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
         }
 
         model.addAttribute("userId", userId);

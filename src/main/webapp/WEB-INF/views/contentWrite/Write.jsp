@@ -27,6 +27,12 @@
                 <input type="text" class="form-control" name="userName" value="${userName}" readonly>
             </label>
         </div>
+        <div class="mb-3">
+            <label class="form-label">작성일 : </label>
+            <label>
+                <input type="text" class="form-control" name="createTime" value="${createTime}" readonly>
+            </label>
+        </div>
         <div class="button-group">
             <input type="submit" class="btn btn-primary" value="게시글 작성" onclick="alert('작성 완료!')">
             <button class="btn btn-secondary" id="btnMove" name="btnMove" type="button">목록</button>
