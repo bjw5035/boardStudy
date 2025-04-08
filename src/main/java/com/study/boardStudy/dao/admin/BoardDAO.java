@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface BoardDAO {
 
+    /* 게시글 삭제 */
     boolean boardDelete(int seq) throws Exception;
 
     /* 게시글 상세 조회 */
