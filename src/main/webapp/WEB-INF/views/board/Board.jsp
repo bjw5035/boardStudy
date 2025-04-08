@@ -39,6 +39,7 @@
         <button type="submit" class="btn btn-board-primary">🔍 검색</button>
     </form>
     <button class="btn btn-success write-button ms-2" id="write" name="btnWrite">📝 글쓰기</button>
+    <button class="btn btn-success delete-button ms-2" id="delete" name="btnDel">글삭제</button>
 </div>
 
 <!-- 게시글 리스트 -->

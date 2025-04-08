@@ -35,7 +35,7 @@ public class BoardController {
     /**
      * 게시글 삭제
      */
-    @GetMapping(value = "/Board/btnDel")
+    @GetMapping(value = "/board/btnDel")
     public String deleteContent(@RequestParam(value = "seq") int seq) throws Exception {
         boolean delContent = boardService.delContent(seq);
         if (!delContent) {

@@ -64,6 +64,11 @@ body {
   float: right;
 }
 
+.delete-button {
+  margin-left: 5px;
+  float: right;
+}
+
 .btn-outline-dark {
   font-weight: bold;
   padding: 8px 16px;
