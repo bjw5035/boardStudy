@@ -46,6 +46,10 @@
 <table class="table table-hover">
     <thead class="table-dark">
     <tr>
+        <th><label>
+            <input type="checkbox" class="cb">
+        </label> 선택
+        </th>
         <th>번호</th>
         <th>제목</th>
         <th>내용</th>
@@ -56,6 +60,9 @@
     <tbody>
     <c:forEach var="post" items="${postList}">
         <tr>
+            <td><label>
+                <input type="checkbox" class="cb">
+            </label></td>
             <td>${post.seq}</td>
             <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
             <td>${post.content}</td>
