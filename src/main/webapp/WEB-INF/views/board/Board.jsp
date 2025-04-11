@@ -39,39 +39,42 @@
         <button type="submit" class="btn btn-board-primary">🔍 검색</button>
     </form>
     <button class="btn btn-success write-button ms-2" id="write" name="btnWrite">📝 글쓰기</button>
-    <button class="btn btn-success delete-button ms-2" id="delete" name="btnDel">글삭제</button>
+
+
 </div>
 
-<!-- 게시글 리스트 -->
-<table class="table table-hover">
-    <thead class="table-dark">
-    <tr>
-        <th><label>
-            <input type="checkbox" class="cb">
-        </label> 선택
-        </th>
-        <th>번호</th>
-        <th>제목</th>
-        <th>내용</th>
-        <th>작성자</th>
-        <th>작성일</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="post" items="${postList}">
+<!-- 삭제 처리용 폼 -->
+<form action="${pageContext.request.contextPath}/Board/btnDel" method="post" id="deleteForm">
+
+    <!-- 게시글 리스트 -->
+    <table class="table table-hover">
+        <thead class="table-dark">
         <tr>
-            <td><label>
-                <input type="checkbox" class="cb">
-            </label></td>
-            <td>${post.seq}</td>
-            <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
-            <td>${post.content}</td>
-            <td>${post.userName}</td>
-            <td>${post.createTime}</td>
+            <th><input type="checkbox" id="checkAll"> 선택</th>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>작성일</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="post" items="${postList}">
+            <tr>
+                <td><input type="checkbox" name="seqList" value="${post.seq}"></td>
+                <td>${post.seq}</td>
+                <td><a href="${pageContext.request.contextPath}/Board/Detail?seq=${post.seq}">${post.title}</a></td>
+                <td>${post.content}</td>
+                <td>${post.userName}</td>
+                <td>${post.createTime}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</form>
+<div class="button-group">
+    <button type="submit">삭제</button>
+</div>
 
 <!-- 페이지네이션 -->
 <div class="d-flex justify-content-center">
