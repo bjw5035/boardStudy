@@ -36,12 +36,12 @@ public class BoardController {
      * 게시글 삭제
      */
     @GetMapping(value = "/Board/btnDel")
-    public String deleteContent(@RequestParam(value = "sqlList") List<Integer> sqlList) throws Exception {
+    public String deleteContent(@RequestParam(value = "seqList", required = false) List<Integer> seqList) throws Exception {
 
         boolean delContent = false;
-        
-        if (sqlList == null || sqlList.isEmpty()) {
-            for (Integer seq : sqlList) {
+
+        if (seqList == null || seqList.isEmpty()) {
+            for (Integer seq : seqList) {
                 delContent = boardService.delContent(seq);
             }
         }
