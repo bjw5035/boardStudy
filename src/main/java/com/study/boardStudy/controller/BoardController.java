@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -35,9 +36,11 @@ public class BoardController {
     /**
      * 게시글 삭제
      */
-    @GetMapping(value = "/Board/btnDel")
-    public String deleteContent(@RequestParam(value = "seqList", required = false) List<Integer> seqList) throws Exception {
+    @PostMapping(value = "/Board/btnDel")
+    public String deleteContent(@RequestParam(value = "seq", required = false) List<Integer> seqList) throws Exception {
 
+        //TODO 2025-05-01 : Form에서 데이터가 넘어오지 않음. 확인 필요
+        logger.info("delete : ", (Object[]) new List[]{seqList});
         boolean delContent = false;
 
         if (seqList == null || seqList.isEmpty()) {

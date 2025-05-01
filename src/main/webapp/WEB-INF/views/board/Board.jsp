@@ -71,10 +71,10 @@
         </c:forEach>
         </tbody>
     </table>
+    <%--    <div class="button-group">--%>
+    <button type="submit" name="delete-button">삭제</button>
+    <%--    </div>--%>
 </form>
-<div class="button-group">
-    <button type="submit">삭제</button>
-</div>
 
 <!-- 페이지네이션 -->
 <div class="d-flex justify-content-center">

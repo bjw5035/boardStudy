@@ -39,4 +39,17 @@
     })
   })
 
+  /**
+   * 게시글 삭제
+   */
+  $(document).ready(function () {
+    $(".delete-button").click(function (e) {
+      e.preventDefault();
+      if (confirm("정말 삭제하시겠습니까?")) {
+        // $(this).closest('tr').remove();
+        $(this).closest('form').submit();
+      }
+    })
+  })
+
 })
