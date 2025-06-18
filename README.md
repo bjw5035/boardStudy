@@ -2,15 +2,38 @@
 
 ## 📌 프로젝트 개요
 
-**Spring MVC와 MyBatis를 활용하여 로그인, 게시글 CRUD, 댓글, 검색, 페이징, 좋아요 기능을 포함한 완성도 높은 웹 게시판을 구축하는 프로젝트입니다.**
+- **목적**: Java 웹 개발(Spring MVC) 학습 및 포트폴리오 목적
+- **기능**: 로그인/회원가입, 게시판 CRUD, 댓글, 예외처리, JSP 기반 UI
+- **특징**:
+  - 전통적인 Servlet 기반 웹 MVC 구조
+  - MyBatis를 이용한 SQL 매핑 및 DB 연동
+  - JSP + JSTL을 이용한 서버 렌더링 기반 View
+  - 간단한 예외처리 및 에러 페이지 구현
+  - 레거시 스타일 웹앱의 구조 학습 가능
+
 
 ## 🛠 기술 스택
 
-- **Backend:** Spring MVC, MyBatis, JSP/Thymeleaf, MySQL
-- **Frontend:** HTML, CSS, JavaScript (AJAX, jQuery, Vue.js 가능)
-- **Security:** Spring Security, JWT(Optional)
+| 영역 | 기술 |
+|------|------|
+| Language | Java 8+ |
+| Framework | Spring MVC |
+| ORM | MyBatis |
+| View | JSP, JSTL |
+| DB | MySQL |
+| Build | Maven |
+| WAS | Apache Tomcat (또는 내장 톰캣) |
 
 ## 🚀 주요 기능
+
+- 사용자 회원가입 / 로그인 (세션 기반 인증)
+- 게시판:
+  - 게시글 목록 조회 (페이징)
+  - 게시글 작성, 수정, 삭제
+  - 게시글 상세 조회
+- 댓글 등록 및 조회
+- JSP 기반 UI 구성
+- 오류/에러 처리 페이지
 
 ### 1️⃣ 회원 관리 (로그인 & 회원가입)
 
